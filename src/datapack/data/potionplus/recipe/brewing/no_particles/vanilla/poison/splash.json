@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:brewing",
+  "input": {
+    "item": "minecraft:splash_potion",
+    "potion_contents": {
+      "potions": "minecraft:poison"
+    }
+  },
+  "reagent": {
+    "item": "#potionplus:brewing/modifier/no_particles"
+  },
+  "output": {
+    "id": "minecraft:splash_potion",
+    "components": {
+      "minecraft:custom_name": {
+        "translate": "item.minecraft.splash_potion.effect.poison",
+        "fallback": "Splash Potion of Poison",
+        "italic": false
+      },
+      "minecraft:potion_contents": {
+        "custom_color": 8889187,
+        "custom_effects": [
+          {
+            "id": "minecraft:poison",
+            "amplifier": 0,
+            "duration": 900,
+            "show_particles": false
+          }
+        ]
+      },
+      "minecraft:lore": [
+        {
+          "translate": "potionplus.lore.no_particles",
+          "fallback": "No Particles",
+          "italic": false,
+          "color": "#FC7812"
+        }
+      ]
+    }
+  }
+}

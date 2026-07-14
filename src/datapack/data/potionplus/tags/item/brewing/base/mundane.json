@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:blaze_powder",
+    "minecraft:breeze_rod",
+    "minecraft:cobweb",
+    "minecraft:ghast_tear",
+    "minecraft:glistering_melon_slice",
+    "minecraft:magma_cream",
+    "minecraft:rabbit_foot",
+    "minecraft:redstone",
+    "minecraft:slime_block",
+    "minecraft:spider_eye",
+    "minecraft:stone",
+    "minecraft:sugar"
+  ]
+}

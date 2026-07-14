@@ -1,0 +1,12 @@
+{
+  "pack": {
+    "description": [
+      {
+        "text": "Adds missing potions and a resin clump modifier that removes particles.",
+        "color": "gold"
+      }
+    ],
+    "min_format": 110,
+    "max_format": 110
+  }
+}

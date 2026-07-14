@@ -1,0 +1,35 @@
+{
+  "criteria": {
+    "tick": {
+      "trigger": "minecraft:tick"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "minecraft:block/black_concrete",
+    "description": [
+      "",
+      {
+        "color": "gold",
+        "text": "All loaded"
+      },
+      {
+        "color": "dark_purple",
+        "text": " Smidul's"
+      },
+      {
+        "color": "gold",
+        "text": " data packs"
+      }
+    ],
+    "frame": "challenge",
+    "icon": {
+      "components": {
+        "minecraft:profile": "Smidul"
+      },
+      "id": "minecraft:player_head"
+    },
+    "show_toast": false,
+    "title": "Tweakidul"
+  }
+}

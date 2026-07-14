@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:brewing",
+  "input": {
+    "item": "minecraft:potion",
+    "potion_contents": {
+      "potions": "minecraft:strong_slowness"
+    }
+  },
+  "reagent": {
+    "item": "#potionplus:brewing/modifier/no_particles"
+  },
+  "output": {
+    "id": "minecraft:potion",
+    "components": {
+      "minecraft:custom_name": {
+        "translate": "item.minecraft.potion.effect.slowness",
+        "fallback": "Potion of Slowness",
+        "italic": false
+      },
+      "minecraft:potion_contents": {
+        "custom_color": 9154528,
+        "custom_effects": [
+          {
+            "id": "minecraft:slowness",
+            "amplifier": 3,
+            "duration": 400,
+            "show_particles": false
+          }
+        ]
+      },
+      "minecraft:lore": [
+        {
+          "translate": "potionplus.lore.no_particles",
+          "fallback": "No Particles",
+          "italic": false,
+          "color": "#FC7812"
+        }
+      ]
+    }
+  }
+}

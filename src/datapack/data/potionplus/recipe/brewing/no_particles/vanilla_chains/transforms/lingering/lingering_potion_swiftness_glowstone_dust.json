@@ -1,0 +1,52 @@
+{
+  "type": "minecraft:brewing",
+  "input": {
+    "item": "minecraft:lingering_potion",
+    "potion_contents": {
+      "effects": {
+        "contains": [
+          {
+            "minecraft:speed": {
+              "amplifier": 0,
+              "duration": 3600,
+              "visible": false
+            }
+          }
+        ],
+        "size": 1
+      }
+    }
+  },
+  "reagent": {
+    "item": "#potionplus:brewing/modifier/strong"
+  },
+  "output": {
+    "id": "minecraft:lingering_potion",
+    "components": {
+      "minecraft:custom_name": {
+        "translate": "item.minecraft.lingering_potion.effect.swiftness",
+        "fallback": "Lingering Potion of Swiftness",
+        "italic": false
+      },
+      "minecraft:potion_contents": {
+        "custom_color": 3402751,
+        "custom_effects": [
+          {
+            "id": "minecraft:speed",
+            "amplifier": 1,
+            "duration": 1800,
+            "show_particles": false
+          }
+        ]
+      },
+      "minecraft:lore": [
+        {
+          "translate": "potionplus.lore.no_particles",
+          "fallback": "No Particles",
+          "italic": false,
+          "color": "#FC7812"
+        }
+      ]
+    }
+  }
+}

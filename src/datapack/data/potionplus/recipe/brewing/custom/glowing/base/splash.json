@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:brewing",
+  "input": {
+    "item": "minecraft:splash_potion",
+    "potion_contents": {
+      "potions": "minecraft:awkward"
+    }
+  },
+  "reagent": {
+    "item": "#potionplus:brewing/effect/glowing"
+  },
+  "output": {
+    "id": "minecraft:splash_potion",
+    "components": {
+      "minecraft:custom_name": {
+        "translate": "item.minecraft.splash_potion.effect.glowing",
+        "fallback": "Splash Potion of Glowing",
+        "italic": false
+      },
+      "minecraft:potion_contents": {
+        "custom_color": 9740385,
+        "custom_effects": [
+          {
+            "id": "minecraft:glowing",
+            "amplifier": 0,
+            "duration": 3600,
+            "show_particles": true
+          }
+        ]
+      }
+    }
+  }
+}

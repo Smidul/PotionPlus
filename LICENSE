@@ -1,0 +1,205 @@
+SMIDUL BUNDLE AND ADDON LICENSE
+Version 1.0, 14 July 2026
+
+Copyright © 2026 Bryan Fernandes de Oliveira, publishing as Smidul.
+All rights reserved.
+
+TERMS AND CONDITIONS
+
+1. DEFINITIONS
+
+"Licensor" means Bryan Fernandes de Oliveira, publishing under the
+pseudonym "Smidul".
+
+"Project" means the work to which this License is attached, together with
+the materials officially distributed as part of that work, including any
+applicable source code, object code, mods, plugins, datapacks, resource
+packs, generators, scripts, configuration files, original assets,
+documentation, and generated output.
+
+"Official Project Page" means a repository, website, or distribution page
+identified by the Licensor as an official source for the Project.
+
+"Authorized Platform" means a hosting, development, or distribution
+platform selected or approved by the Licensor to host an official
+repository, page, or release of the Project.
+
+"Bundle" means a modpack, server pack, datapack collection, map, world
+download, or comparable collection containing multiple independently
+useful projects or resources.
+
+"Addon" means a separate work that requires the official Project and adds
+compatibility, integration, configuration, or additional functionality
+without reproducing a substantial part of the Project.
+
+"Standalone Distribution" means distribution of the Project, a modified
+copy of the Project, or a substantial part of the Project by itself, or
+within a collection whose principal purpose is to redistribute, replace,
+rebrand, or provide an altered edition of the Project.
+
+2. LICENSE GRANT
+
+Subject to the terms of this License, the Licensor grants you a
+non-exclusive, worldwide, royalty-free license to:
+
+a. download, install, and use the Project;
+b. use the Project in personal worlds, multiplayer worlds, public or
+   private servers, and other compatible installations;
+c. modify the Project for your own use;
+d. reproduce and distribute the original or a modified copy of the
+   Project solely as part of a Bundle that complies with Section 3;
+e. create and distribute an Addon that complies with Section 4;
+f. use documented tags, APIs, commands, configuration options, interfaces,
+   and extension points; and
+g. create a GitHub fork solely as permitted by Section 5.
+
+No rights are granted except those expressly stated in this License.
+
+3. BUNDLE DISTRIBUTION
+
+You may include the original or a modified copy of the Project in a Bundle
+only if all of the following conditions are satisfied:
+
+a. the Bundle contains multiple independently useful projects or resources;
+b. the Bundle does not exist principally to redistribute, replace, rebrand,
+   or provide an altered edition of the Project;
+c. this License and all copyright notices distributed with the Project are
+   retained;
+d. the Project is clearly attributed to Smidul in a credits,
+   dependencies, acknowledgements, version information, or equivalent
+   section reasonably accessible to users;
+e. a link to the Official Project Page is provided where reasonably
+   practicable;
+f. material modifications are identified where reasonably practicable;
+g. the Project is not represented as having been created entirely by the
+   Bundle author; and
+h. the Project or modified copy is not offered as a separate download
+   outside the Bundle.
+
+A Bundle may be free or monetized only to the extent permitted by
+applicable law, the rules of its distribution platform, and any applicable
+publisher terms, end-user license agreements, or usage guidelines,
+including the Minecraft EULA and Minecraft Usage Guidelines where
+applicable.
+
+You may not impose a separate charge specifically for the Project or a
+modified copy of it, or represent that payment transfers ownership of the
+Project.
+
+Distribution permitted by this Section does not authorize Standalone
+Distribution.
+
+4. ADDONS AND INTEGRATIONS
+
+You may create and distribute an Addon if the Addon:
+
+a. requires the official Project to be obtained separately;
+b. consists primarily of original code, data, assets, or configuration;
+c. clearly states that it is unofficial and is not maintained or endorsed
+   by Smidul;
+d. does not use the Project's name, icon, branding, or presentation in a
+   manner likely to create confusion about origin or endorsement; and
+e. links to the Official Project Page where reasonably practicable.
+
+An Addon may provide compatibility, integration, configuration, or
+additional functionality. An Addon may not:
+
+a. reproduce a substantial portion of the Project;
+b. provide substantially all of the Project's functionality without the
+   official Project;
+c. operate principally as a replacement, fork, mirror, port, unofficial
+   update, continuation, maintenance release, reimplementation, or
+   repackaged edition of the Project; or
+d. redistribute an original or modified copy of the Project.
+
+5. GITHUB FORKS
+
+A fork created through GitHub's official fork functionality may remain
+publicly visible within the repository network for review, development,
+testing, integration work, and submission of contributions to the official
+repository.
+
+This permission does not authorize you to:
+
+a. publish releases, packages, builds, installers, archives, container
+   images, or other distributions from the fork;
+b. promote the fork as an independent, alternative, maintained, continued,
+   ported, or replacement edition of the Project;
+c. use the fork as a mirror or separate distribution source;
+d. detach or copy the fork for the purpose of evading this License; or
+e. exercise any right prohibited elsewhere in this License.
+
+6. AUTHORIZED PLATFORMS
+
+The Licensor may authorize an Authorized Platform, including a source-code
+host or project-distribution service, to store, reproduce, process, cache,
+display, and distribute official copies of the Project as reasonably
+necessary to provide that platform's services.
+
+This Section applies only to official repositories, pages, and releases
+created or approved by the Licensor. It does not grant platform users any
+independent right to redistribute the Project except as otherwise expressly
+permitted by this License.
+
+7. RESTRICTIONS
+
+Except as expressly permitted by Sections 3 through 6, you may not:
+
+a. publish, redistribute, reupload, mirror, sublicense, sell, rent, or
+   otherwise provide copies of the Project;
+b. distribute modified versions, standalone forks, ports, unofficial
+   updates, continuations, maintenance releases, replacement projects, or
+   rebranded editions;
+c. host a separate download of the Project or a modified copy;
+d. remove, conceal, or misrepresent copyright, attribution, authorship, or
+   license notices;
+e. claim ownership of the Project or any substantial portion of it; or
+f. use the Licensor's names, logos, icons, or branding in a manner likely
+   to imply sponsorship, affiliation, or endorsement.
+
+8. CONTRIBUTIONS
+
+Unless a separate written contributor agreement applies, by intentionally
+submitting a contribution to an official repository for the Project, you
+grant the Licensor a perpetual, worldwide, non-exclusive, royalty-free,
+irrevocable license to use, reproduce, modify, distribute, sublicense, and
+relicense that contribution as part of the Project.
+
+You represent that you have the authority to grant these rights.
+
+9. THIRD-PARTY MATERIALS
+
+Third-party code, libraries, assets, and other materials remain governed by
+their respective licenses. This License grants no rights in material the
+Licensor does not own or have authority to license.
+
+10. TERMINATION
+
+Your rights under this License terminate automatically upon violation.
+
+If a first violation was unintentional, your rights are automatically
+reinstated if you completely cure the violation within thirty days after
+receiving written notice from the Licensor. Repeated, deliberate, or
+uncured violations require express written reinstatement by the Licensor.
+
+Termination does not affect provisions that by their nature should survive,
+including ownership, restrictions, disclaimers, and limitations of
+liability.
+
+
+11. DISCLAIMER OF WARRANTY
+
+THE PROJECT IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+PURPOSE, TITLE, AND NON-INFRINGEMENT.
+
+12. LIMITATION OF LIABILITY
+
+TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE LICENSOR SHALL NOT BE LIABLE FOR
+ANY CLAIM, LOSS, DAMAGE, OR OTHER LIABILITY ARISING FROM OR RELATED TO THE
+PROJECT OR ITS USE.
+
+13. ADDITIONAL PERMISSION
+
+Any permission or exception not stated in this License must be granted in
+writing by the Licensor.

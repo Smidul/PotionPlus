@@ -1,0 +1,52 @@
+{
+  "type": "minecraft:brewing",
+  "input": {
+    "item": "minecraft:splash_potion",
+    "potion_contents": {
+      "effects": {
+        "contains": [
+          {
+            "minecraft:hero_of_the_village": {
+              "amplifier": 1,
+              "duration": 1800,
+              "visible": false
+            }
+          }
+        ],
+        "size": 1
+      }
+    }
+  },
+  "reagent": {
+    "item": "#potionplus:brewing/modifier/lingering"
+  },
+  "output": {
+    "id": "minecraft:lingering_potion",
+    "components": {
+      "minecraft:custom_name": {
+        "translate": "item.minecraft.lingering_potion.effect.hero_of_the_village",
+        "fallback": "Lingering Potion of Hero of the Village",
+        "italic": false
+      },
+      "minecraft:potion_contents": {
+        "custom_color": 4521796,
+        "custom_effects": [
+          {
+            "id": "minecraft:hero_of_the_village",
+            "amplifier": 1,
+            "duration": 1800,
+            "show_particles": false
+          }
+        ]
+      },
+      "minecraft:lore": [
+        {
+          "translate": "potionplus.lore.no_particles",
+          "fallback": "No Particles",
+          "italic": false,
+          "color": "#FC7812"
+        }
+      ]
+    }
+  }
+}

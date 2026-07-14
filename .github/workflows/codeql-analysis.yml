@@ -1,0 +1,52 @@
+name: CodeQL
+on:
+  push:
+    branches: [dev]
+  pull_request:
+    branches: [dev]
+  schedule:
+    - cron: "30 8 * * 4"
+  workflow_dispatch:
+
+jobs:
+  check-eligibility:
+    runs-on: ubuntu-latest
+    outputs:
+      allowed: ${{ steps.check.outputs.allowed }}
+    steps:
+      - id: check
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          ALLOWED=$(gh api repos/${{ github.repository }} --jq '.private == false or .security_and_analysis.advanced_security.status == "enabled"')
+          echo "allowed=$ALLOWED" >> $GITHUB_OUTPUT
+
+  analyze:
+    name: Analyze
+    needs: check-eligibility
+    if: needs.check-eligibility.outputs.allowed == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    strategy:
+      fail-fast: false
+      matrix:
+        language: ["javascript"]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: ${{ matrix.language }}
+
+      - name: Autobuild
+        uses: github/codeql-action/autobuild@v3
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3

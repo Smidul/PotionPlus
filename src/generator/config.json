@@ -1,0 +1,1235 @@
+{
+  "target": {
+    "data_pack_version": 110.0
+  },
+  "generator": {
+    "include_vanilla_recipes": true,
+    "item_tags": {
+      "enabled": true,
+      "root": "brewing",
+      "auto_generate": ["base", "effect", "modifier"],
+      "rules": []
+    },
+    "output": {
+      "root": "../datapack/data"
+    }
+  },
+  "namespaces": {
+    "custom": "potionplus",
+    "vanilla": "minecraft"
+  },
+  "forms": {
+    "regular": {
+      "item": "minecraft:potion",
+      "translation_item": "potion",
+      "fallback_prefix": "Potion of "
+    },
+    "splash": {
+      "item": "minecraft:splash_potion",
+      "translation_item": "splash_potion",
+      "fallback_prefix": "Splash Potion of "
+    },
+    "lingering": {
+      "item": "minecraft:lingering_potion",
+      "translation_item": "lingering_potion",
+      "fallback_prefix": "Lingering Potion of "
+    }
+  },
+  "bases": {
+    "awkward": {
+      "brew": {
+        "water": {
+          "items": ["minecraft:nether_wart"]
+        }
+      }
+    },
+    "mundane": {
+      "brew": {
+        "water": {
+          "items": [
+            "minecraft:blaze_powder",
+            "minecraft:breeze_rod",
+            "minecraft:cobweb",
+            "minecraft:ghast_tear",
+            "minecraft:glistering_melon_slice",
+            "minecraft:magma_cream",
+            "minecraft:rabbit_foot",
+            "minecraft:redstone",
+            "minecraft:slime_block",
+            "minecraft:spider_eye",
+            "minecraft:stone",
+            "minecraft:sugar"
+          ]
+        }
+      }
+    },
+    "thick": {
+      "brew": {
+        "water": {
+          "items": ["minecraft:glowstone_dust"]
+        }
+      }
+    }
+  },
+  "modifiers": {
+    "extended": {
+      "reagent": {
+        "items": ["minecraft:redstone"]
+      },
+      "variant_transform": {
+        "from": "base",
+        "to": "long"
+      }
+    },
+    "strong": {
+      "reagent": {
+        "items": ["minecraft:glowstone_dust"]
+      },
+      "variant_transform": {
+        "from": "base",
+        "to": "strong"
+      }
+    },
+    "corrupting": {
+      "reagent": {
+        "items": ["minecraft:fermented_spider_eye"]
+      }
+    },
+    "splash": {
+      "reagent": {
+        "items": ["minecraft:gunpowder"]
+      },
+      "container_conversion": {
+        "from": "regular",
+        "to": "splash"
+      }
+    },
+    "lingering": {
+      "reagent": {
+        "items": ["minecraft:dragon_breath"]
+      },
+      "container_conversion": {
+        "from": "splash",
+        "to": "lingering"
+      }
+    },
+    "no_particles": {
+      "reagent": {
+        "items": ["minecraft:resin_clump"]
+      },
+      "global": {
+        "apply_to": ["custom", "vanilla"],
+        "input_show_particles": true,
+        "output_show_particles": false,
+        "lore": [
+          {
+            "translate": "potionplus.lore.no_particles",
+            "fallback": "No Particles",
+            "italic": false,
+            "color": "#FC7812"
+          }
+        ]
+      }
+    }
+  },
+  "custom": {
+    "effects": {
+      "absorption": {
+        "effect_id": "minecraft:absorption",
+        "display": "Absorption",
+        "translation_suffix": "absorption",
+        "variants": {
+          "base": {
+            "duration": 3600,
+            "amplifier": 0
+          },
+          "long": {
+            "duration": 9600,
+            "amplifier": 0
+          },
+          "strong": {
+            "duration": 1800,
+            "amplifier": 1
+          }
+        },
+        "color": 2445989,
+        "brew": {
+          "awkward": {
+            "items": ["minecraft:golden_apple"]
+          }
+        }
+      },
+      "bad_luck": {
+        "effect_id": "minecraft:unluck",
+        "display": "Bad Luck",
+        "translation_suffix": "bad_luck",
+        "variants": {
+          "base": {
+            "duration": 6000,
+            "amplifier": 0
+          },
+          "long": {
+            "duration": 12000,
+            "amplifier": 0
+          },
+          "strong": {
+            "duration": 3000,
+            "amplifier": 1
+          }
+        },
+        "color": 12624973,
+        "brew": {
+          "awkward": {
+            "items": ["minecraft:poisonous_potato"]
+          }
+        }
+      },
+      "blindness": {
+        "effect_id": "minecraft:blindness",
+        "display": "Blindness",
+        "translation_suffix": "blindness",
+        "variants": {
+          "base": {
+            "duration": 1800,
+            "amplifier": 0
+          },
+          "long": {
+            "duration": 4800,
+            "amplifier": 0
+          }
+        },
+        "color": 2039587,
+        "brew": {
+          "awkward": {
+            "items": ["minecraft:ink_sac"]
+          }
+        }
+      },
+      "conduit_power": {
+        "effect_id": "minecraft:conduit_power",
+        "display": "Conduit Power",
+        "translation_suffix": "conduit_power",
+        "variants": {
+          "base": {
+            "duration": 3600,
+            "amplifier": 0
+          },
+          "long": {
+            "duration": 9600,
+            "amplifier": 0
+          }
+        },
+        "color": 1950417,
+        "brew": {
+          "awkward": {
+            "items": ["minecraft:heart_of_the_sea"]
+          }
+        }
+      },
+      "breath_of_the_nautilus": {
+        "effect_id": "minecraft:breath_of_the_nautilus",
+        "display": "Breath of the Nautilus",
+        "translation_suffix": "breath_of_the_nautilus",
+        "variants": {
+          "base": {
+            "duration": 3600,
+            "amplifier": 0
+          },
+          "long": {
+            "duration": 9600,
+            "amplifier": 0
+          }
+        },
+        "color": 65518,
+        "brew": {
+          "awkward": {
+            "items": ["minecraft:nautilus_shell"]
+          }
+        }
+      },
+      "darkness": {
+        "effect_id": "minecraft:darkness",
+        "display": "Darkness",
+        "translation_suffix": "darkness",
+        "variants": {
+          "base": {
+            "duration": 1800,
+            "amplifier": 0
+          },
+          "long": {
+            "duration": 4800,
+            "amplifier": 0
+          }
+        },
+        "color": 2696993,
+        "brew": {
+          "awkward": {
+            "items": ["minecraft:echo_shard"]
+          }
+        }
+      },
+      "dolphins_grace": {
+        "effect_id": "minecraft:dolphins_grace",
+        "display": "Dolphin's Grace",
+        "translation_suffix": "dolphins_grace",
+        "variants": {
+          "base": {
+            "duration": 3600,
+            "amplifier": 0
+          },
+          "long": {
+            "duration": 9600,
+            "amplifier": 0
+          }
+        },
+        "color": 8954814,
+        "brew": {
+          "awkward": {
+            "items": ["minecraft:cod"]
+          }
+        }
+      },
+      "glowing": {
+        "effect_id": "minecraft:glowing",
+        "display": "Glowing",
+        "translation_suffix": "glowing",
+        "variants": {
+          "base": {
+            "duration": 3600,
+            "amplifier": 0
+          },
+          "long": {
+            "duration": 9600,
+            "amplifier": 0
+          }
+        },
+        "color": 9740385,
+        "brew": {
+          "awkward": {
+            "items": ["minecraft:glow_ink_sac"]
+          }
+        }
+      },
+      "haste": {
+        "effect_id": "minecraft:haste",
+        "display": "Haste",
+        "translation_suffix": "haste",
+        "variants": {
+          "base": {
+            "duration": 3600,
+            "amplifier": 0
+          },
+          "long": {
+            "duration": 9600,
+            "amplifier": 0
+          },
+          "strong": {
+            "duration": 1800,
+            "amplifier": 1
+          }
+        },
+        "color": 14270531,
+        "brew": {
+          "awkward": {
+            "items": ["minecraft:diamond"]
+          }
+        }
+      },
+      "health_boost": {
+        "effect_id": "minecraft:health_boost",
+        "display": "Health Boost",
+        "translation_suffix": "health_boost",
+        "variants": {
+          "base": {
+            "duration": 3600,
+            "amplifier": 0
+          },
+          "long": {
+            "duration": 9600,
+            "amplifier": 0
+          },
+          "strong": {
+            "duration": 1800,
+            "amplifier": 1
+          }
+        },
+        "color": 16284963,
+        "brew": {
+          "awkward": {
+            "items": ["minecraft:gold_block"]
+          }
+        }
+      },
+      "hero_of_the_village": {
+        "effect_id": "minecraft:hero_of_the_village",
+        "display": "Hero of the Village",
+        "translation_suffix": "hero_of_the_village",
+        "variants": {
+          "base": {
+            "duration": 3600,
+            "amplifier": 0
+          },
+          "long": {
+            "duration": 9600,
+            "amplifier": 0
+          },
+          "strong": {
+            "duration": 1800,
+            "amplifier": 1
+          }
+        },
+        "color": 4521796,
+        "brew": {
+          "awkward": {
+            "items": ["minecraft:emerald_block"]
+          }
+        }
+      },
+      "hunger": {
+        "effect_id": "minecraft:hunger",
+        "display": "Hunger",
+        "translation_suffix": "hunger",
+        "variants": {
+          "base": {
+            "duration": 1800,
+            "amplifier": 0
+          },
+          "long": {
+            "duration": 4800,
+            "amplifier": 0
+          },
+          "strong": {
+            "duration": 900,
+            "amplifier": 1
+          }
+        },
+        "color": 5797459,
+        "brew": {
+          "awkward": {
+            "items": ["minecraft:rotten_flesh"]
+          }
+        }
+      },
+      "levitation": {
+        "effect_id": "minecraft:levitation",
+        "display": "Levitation",
+        "translation_suffix": "levitation",
+        "variants": {
+          "base": {
+            "duration": 400,
+            "amplifier": 0
+          },
+          "long": {
+            "duration": 900,
+            "amplifier": 0
+          },
+          "strong": {
+            "duration": 200,
+            "amplifier": 1
+          }
+        },
+        "color": 13565951,
+        "brew": {
+          "awkward": {
+            "items": ["minecraft:shulker_shell"]
+          }
+        }
+      },
+      "luck": {
+        "effect_id": "minecraft:luck",
+        "display": "Luck",
+        "translation_suffix": "luck",
+        "variants": {
+          "base": {
+            "duration": 6000,
+            "amplifier": 0
+          },
+          "long": {
+            "duration": 12000,
+            "amplifier": 0
+          },
+          "strong": {
+            "duration": 3000,
+            "amplifier": 1
+          }
+        },
+        "color": 5882118,
+        "brew": {
+          "awkward": {
+            "items": ["minecraft:emerald"]
+          }
+        }
+      },
+      "mining_fatigue": {
+        "effect_id": "minecraft:mining_fatigue",
+        "display": "Mining Fatigue",
+        "translation_suffix": "mining_fatigue",
+        "variants": {
+          "base": {
+            "duration": 1800,
+            "amplifier": 0
+          },
+          "long": {
+            "duration": 4800,
+            "amplifier": 0
+          },
+          "strong": {
+            "duration": 900,
+            "amplifier": 1
+          }
+        },
+        "color": 4866583,
+        "brew": {
+          "awkward": {
+            "items": ["minecraft:wet_sponge"]
+          }
+        }
+      },
+      "nausea": {
+        "effect_id": "minecraft:nausea",
+        "display": "Nausea",
+        "translation_suffix": "nausea",
+        "variants": {
+          "base": {
+            "duration": 1800,
+            "amplifier": 0
+          },
+          "long": {
+            "duration": 4800,
+            "amplifier": 0
+          }
+        },
+        "color": 5578058,
+        "brew": {
+          "awkward": {
+            "items": ["minecraft:potent_sulfur"]
+          }
+        }
+      },
+      "resistance": {
+        "effect_id": "minecraft:resistance",
+        "display": "Resistance",
+        "translation_suffix": "resistance",
+        "variants": {
+          "base": {
+            "duration": 3600,
+            "amplifier": 0
+          },
+          "long": {
+            "duration": 9600,
+            "amplifier": 0
+          },
+          "strong": {
+            "duration": 1800,
+            "amplifier": 1
+          }
+        },
+        "color": 9520880,
+        "brew": {
+          "awkward": {
+            "items": ["minecraft:obsidian"]
+          }
+        }
+      },
+      "saturation": {
+        "effect_id": "minecraft:saturation",
+        "display": "Saturation",
+        "translation_suffix": "saturation",
+        "variants": {
+          "base": {
+            "duration": 160,
+            "amplifier": 0
+          },
+          "long": {
+            "duration": 240,
+            "amplifier": 0
+          },
+          "strong": {
+            "duration": 120,
+            "amplifier": 1
+          }
+        },
+        "color": 16262179,
+        "brew": {
+          "awkward": {
+            "items": ["minecraft:golden_dandelion"]
+          }
+        }
+      },
+      "withering": {
+        "effect_id": "minecraft:wither",
+        "display": "Withering",
+        "translation_suffix": "withering",
+        "variants": {
+          "base": {
+            "duration": 800,
+            "amplifier": 0
+          },
+          "long": {
+            "duration": 1800,
+            "amplifier": 0
+          },
+          "strong": {
+            "duration": 400,
+            "amplifier": 1
+          }
+        },
+        "color": 7561558,
+        "brew": {
+          "awkward": {
+            "items": ["minecraft:wither_rose"]
+          }
+        }
+      }
+    },
+    "cross_effect_transforms": []
+  },
+  "vanilla": {
+    "potions": {
+      "fire_resistance": {
+        "display": "Fire Resistance",
+        "translation_suffix": "fire_resistance",
+        "color": 16750848,
+        "effects": [
+          {
+            "id": "minecraft:fire_resistance",
+            "amplifier": 0,
+            "duration": 3600
+          }
+        ],
+        "brew": {
+          "awkward": {
+            "items": ["minecraft:magma_cream"]
+          }
+        }
+      },
+      "harming": {
+        "display": "Harming",
+        "translation_suffix": "harming",
+        "color": 11101546,
+        "effects": [
+          {
+            "id": "minecraft:instant_damage",
+            "amplifier": 0,
+            "duration": 1
+          }
+        ]
+      },
+      "healing": {
+        "display": "Healing",
+        "translation_suffix": "healing",
+        "color": 16262179,
+        "effects": [
+          {
+            "id": "minecraft:instant_health",
+            "amplifier": 0,
+            "duration": 1
+          }
+        ],
+        "brew": {
+          "awkward": {
+            "items": ["minecraft:glistering_melon_slice"]
+          }
+        }
+      },
+      "infested": {
+        "display": "Infestation",
+        "translation_suffix": "infested",
+        "color": 9214860,
+        "effects": [
+          {
+            "id": "minecraft:infested",
+            "amplifier": 0,
+            "duration": 3600
+          }
+        ],
+        "brew": {
+          "awkward": {
+            "items": ["minecraft:stone"]
+          }
+        }
+      },
+      "invisibility": {
+        "display": "Invisibility",
+        "translation_suffix": "invisibility",
+        "color": 16185078,
+        "effects": [
+          {
+            "id": "minecraft:invisibility",
+            "amplifier": 0,
+            "duration": 3600
+          }
+        ]
+      },
+      "leaping": {
+        "display": "Leaping",
+        "translation_suffix": "leaping",
+        "color": 16646020,
+        "effects": [
+          {
+            "id": "minecraft:jump_boost",
+            "amplifier": 0,
+            "duration": 3600
+          }
+        ],
+        "brew": {
+          "awkward": {
+            "items": ["minecraft:rabbit_foot"]
+          }
+        }
+      },
+      "long_fire_resistance": {
+        "display": "Fire Resistance",
+        "translation_suffix": "fire_resistance",
+        "color": 16750848,
+        "effects": [
+          {
+            "id": "minecraft:fire_resistance",
+            "amplifier": 0,
+            "duration": 9600
+          }
+        ]
+      },
+      "long_invisibility": {
+        "display": "Invisibility",
+        "translation_suffix": "invisibility",
+        "color": 16185078,
+        "effects": [
+          {
+            "id": "minecraft:invisibility",
+            "amplifier": 0,
+            "duration": 9600
+          }
+        ]
+      },
+      "long_leaping": {
+        "display": "Leaping",
+        "translation_suffix": "leaping",
+        "color": 16646020,
+        "effects": [
+          {
+            "id": "minecraft:jump_boost",
+            "amplifier": 0,
+            "duration": 9600
+          }
+        ]
+      },
+      "long_night_vision": {
+        "display": "Night Vision",
+        "translation_suffix": "night_vision",
+        "color": 12779366,
+        "effects": [
+          {
+            "id": "minecraft:night_vision",
+            "amplifier": 0,
+            "duration": 9600
+          }
+        ]
+      },
+      "long_poison": {
+        "display": "Poison",
+        "translation_suffix": "poison",
+        "color": 8889187,
+        "effects": [
+          {
+            "id": "minecraft:poison",
+            "amplifier": 0,
+            "duration": 1800
+          }
+        ]
+      },
+      "long_regeneration": {
+        "display": "Regeneration",
+        "translation_suffix": "regeneration",
+        "color": 13458603,
+        "effects": [
+          {
+            "id": "minecraft:regeneration",
+            "amplifier": 0,
+            "duration": 1800
+          }
+        ]
+      },
+      "long_slow_falling": {
+        "display": "Slow Falling",
+        "translation_suffix": "slow_falling",
+        "color": 15978425,
+        "effects": [
+          {
+            "id": "minecraft:slow_falling",
+            "amplifier": 0,
+            "duration": 4800
+          }
+        ]
+      },
+      "long_slowness": {
+        "display": "Slowness",
+        "translation_suffix": "slowness",
+        "color": 9154528,
+        "effects": [
+          {
+            "id": "minecraft:slowness",
+            "amplifier": 0,
+            "duration": 4800
+          }
+        ]
+      },
+      "long_strength": {
+        "display": "Strength",
+        "translation_suffix": "strength",
+        "color": 16762624,
+        "effects": [
+          {
+            "id": "minecraft:strength",
+            "amplifier": 0,
+            "duration": 9600
+          }
+        ]
+      },
+      "long_swiftness": {
+        "display": "Swiftness",
+        "translation_suffix": "swiftness",
+        "color": 3402751,
+        "effects": [
+          {
+            "id": "minecraft:speed",
+            "amplifier": 0,
+            "duration": 9600
+          }
+        ]
+      },
+      "long_turtle_master": {
+        "display": "Turtle Master",
+        "translation_suffix": "turtle_master",
+        "color": 9274086,
+        "effects": [
+          {
+            "id": "minecraft:slowness",
+            "amplifier": 3,
+            "duration": 800
+          },
+          {
+            "id": "minecraft:resistance",
+            "amplifier": 2,
+            "duration": 800
+          }
+        ]
+      },
+      "long_water_breathing": {
+        "display": "Water Breathing",
+        "translation_suffix": "water_breathing",
+        "color": 10017472,
+        "effects": [
+          {
+            "id": "minecraft:water_breathing",
+            "amplifier": 0,
+            "duration": 9600
+          }
+        ]
+      },
+      "long_weakness": {
+        "display": "Weakness",
+        "translation_suffix": "weakness",
+        "color": 4738376,
+        "effects": [
+          {
+            "id": "minecraft:weakness",
+            "amplifier": 0,
+            "duration": 4800
+          }
+        ]
+      },
+      "night_vision": {
+        "display": "Night Vision",
+        "translation_suffix": "night_vision",
+        "color": 12779366,
+        "effects": [
+          {
+            "id": "minecraft:night_vision",
+            "amplifier": 0,
+            "duration": 3600
+          }
+        ],
+        "brew": {
+          "awkward": {
+            "items": ["minecraft:golden_carrot"]
+          }
+        }
+      },
+      "oozing": {
+        "display": "Oozing",
+        "translation_suffix": "oozing",
+        "color": 10092451,
+        "effects": [
+          {
+            "id": "minecraft:oozing",
+            "amplifier": 0,
+            "duration": 3600
+          }
+        ],
+        "brew": {
+          "awkward": {
+            "items": ["minecraft:slime_block"]
+          }
+        }
+      },
+      "poison": {
+        "display": "Poison",
+        "translation_suffix": "poison",
+        "color": 8889187,
+        "effects": [
+          {
+            "id": "minecraft:poison",
+            "amplifier": 0,
+            "duration": 900
+          }
+        ],
+        "brew": {
+          "awkward": {
+            "items": ["minecraft:spider_eye"]
+          }
+        }
+      },
+      "regeneration": {
+        "display": "Regeneration",
+        "translation_suffix": "regeneration",
+        "color": 13458603,
+        "effects": [
+          {
+            "id": "minecraft:regeneration",
+            "amplifier": 0,
+            "duration": 900
+          }
+        ],
+        "brew": {
+          "awkward": {
+            "items": ["minecraft:ghast_tear"]
+          }
+        }
+      },
+      "slow_falling": {
+        "display": "Slow Falling",
+        "translation_suffix": "slow_falling",
+        "color": 15978425,
+        "effects": [
+          {
+            "id": "minecraft:slow_falling",
+            "amplifier": 0,
+            "duration": 1800
+          }
+        ],
+        "brew": {
+          "awkward": {
+            "items": ["minecraft:phantom_membrane"]
+          }
+        }
+      },
+      "slowness": {
+        "display": "Slowness",
+        "translation_suffix": "slowness",
+        "color": 9154528,
+        "effects": [
+          {
+            "id": "minecraft:slowness",
+            "amplifier": 0,
+            "duration": 1800
+          }
+        ]
+      },
+      "strength": {
+        "display": "Strength",
+        "translation_suffix": "strength",
+        "color": 16762624,
+        "effects": [
+          {
+            "id": "minecraft:strength",
+            "amplifier": 0,
+            "duration": 3600
+          }
+        ],
+        "brew": {
+          "awkward": {
+            "items": ["minecraft:blaze_powder"]
+          }
+        }
+      },
+      "strong_harming": {
+        "display": "Harming",
+        "translation_suffix": "harming",
+        "color": 11101546,
+        "effects": [
+          {
+            "id": "minecraft:instant_damage",
+            "amplifier": 1,
+            "duration": 1
+          }
+        ]
+      },
+      "strong_healing": {
+        "display": "Healing",
+        "translation_suffix": "healing",
+        "color": 16262179,
+        "effects": [
+          {
+            "id": "minecraft:instant_health",
+            "amplifier": 1,
+            "duration": 1
+          }
+        ]
+      },
+      "strong_leaping": {
+        "display": "Leaping",
+        "translation_suffix": "leaping",
+        "color": 16646020,
+        "effects": [
+          {
+            "id": "minecraft:jump_boost",
+            "amplifier": 1,
+            "duration": 1800
+          }
+        ]
+      },
+      "strong_poison": {
+        "display": "Poison",
+        "translation_suffix": "poison",
+        "color": 8889187,
+        "effects": [
+          {
+            "id": "minecraft:poison",
+            "amplifier": 1,
+            "duration": 432
+          }
+        ]
+      },
+      "strong_regeneration": {
+        "display": "Regeneration",
+        "translation_suffix": "regeneration",
+        "color": 13458603,
+        "effects": [
+          {
+            "id": "minecraft:regeneration",
+            "amplifier": 1,
+            "duration": 450
+          }
+        ]
+      },
+      "strong_slowness": {
+        "display": "Slowness",
+        "translation_suffix": "slowness",
+        "color": 9154528,
+        "effects": [
+          {
+            "id": "minecraft:slowness",
+            "amplifier": 3,
+            "duration": 400
+          }
+        ]
+      },
+      "strong_strength": {
+        "display": "Strength",
+        "translation_suffix": "strength",
+        "color": 16762624,
+        "effects": [
+          {
+            "id": "minecraft:strength",
+            "amplifier": 1,
+            "duration": 1800
+          }
+        ]
+      },
+      "strong_swiftness": {
+        "display": "Swiftness",
+        "translation_suffix": "swiftness",
+        "color": 3402751,
+        "effects": [
+          {
+            "id": "minecraft:speed",
+            "amplifier": 1,
+            "duration": 1800
+          }
+        ]
+      },
+      "strong_turtle_master": {
+        "display": "Turtle Master",
+        "translation_suffix": "turtle_master",
+        "color": 9274854,
+        "effects": [
+          {
+            "id": "minecraft:slowness",
+            "amplifier": 5,
+            "duration": 400
+          },
+          {
+            "id": "minecraft:resistance",
+            "amplifier": 3,
+            "duration": 400
+          }
+        ]
+      },
+      "swiftness": {
+        "display": "Swiftness",
+        "translation_suffix": "swiftness",
+        "color": 3402751,
+        "effects": [
+          {
+            "id": "minecraft:speed",
+            "amplifier": 0,
+            "duration": 3600
+          }
+        ],
+        "brew": {
+          "awkward": {
+            "items": ["minecraft:sugar"]
+          }
+        }
+      },
+      "turtle_master": {
+        "display": "Turtle Master",
+        "translation_suffix": "turtle_master",
+        "color": 9274086,
+        "effects": [
+          {
+            "id": "minecraft:slowness",
+            "amplifier": 3,
+            "duration": 400
+          },
+          {
+            "id": "minecraft:resistance",
+            "amplifier": 2,
+            "duration": 400
+          }
+        ],
+        "brew": {
+          "awkward": {
+            "items": ["minecraft:turtle_helmet"]
+          }
+        }
+      },
+      "water_breathing": {
+        "display": "Water Breathing",
+        "translation_suffix": "water_breathing",
+        "color": 10017472,
+        "effects": [
+          {
+            "id": "minecraft:water_breathing",
+            "amplifier": 0,
+            "duration": 3600
+          }
+        ],
+        "brew": {
+          "awkward": {
+            "items": ["minecraft:pufferfish"]
+          }
+        }
+      },
+      "weakness": {
+        "display": "Weakness",
+        "translation_suffix": "weakness",
+        "color": 4738376,
+        "effects": [
+          {
+            "id": "minecraft:weakness",
+            "amplifier": 0,
+            "duration": 1800
+          }
+        ],
+        "brew": {
+          "water": {
+            "items": ["minecraft:fermented_spider_eye"]
+          }
+        }
+      },
+      "weaving": {
+        "display": "Weaving",
+        "translation_suffix": "weaving",
+        "color": 7891290,
+        "effects": [
+          {
+            "id": "minecraft:weaving",
+            "amplifier": 0,
+            "duration": 3600
+          }
+        ],
+        "brew": {
+          "awkward": {
+            "items": ["minecraft:cobweb"]
+          }
+        }
+      },
+      "wind_charged": {
+        "display": "Wind Charged",
+        "translation_suffix": "wind_charged",
+        "color": 12438015,
+        "effects": [
+          {
+            "id": "minecraft:wind_charged",
+            "amplifier": 0,
+            "duration": 3600
+          }
+        ],
+        "brew": {
+          "awkward": {
+            "items": ["minecraft:breeze_rod"]
+          }
+        }
+      }
+    },
+    "cross_effect_transforms": [
+      {
+        "from": "healing",
+        "to": "harming",
+        "modifier": "corrupting"
+      },
+      {
+        "from": "leaping",
+        "to": "slowness",
+        "modifier": "corrupting"
+      },
+      {
+        "from": "long_leaping",
+        "to": "long_slowness",
+        "modifier": "corrupting"
+      },
+      {
+        "from": "long_night_vision",
+        "to": "long_invisibility",
+        "modifier": "corrupting"
+      },
+      {
+        "from": "long_poison",
+        "to": "harming",
+        "modifier": "corrupting"
+      },
+      {
+        "from": "long_swiftness",
+        "to": "long_slowness",
+        "modifier": "corrupting"
+      },
+      {
+        "from": "night_vision",
+        "to": "invisibility",
+        "modifier": "corrupting"
+      },
+      {
+        "from": "poison",
+        "to": "harming",
+        "modifier": "corrupting"
+      },
+      {
+        "from": "strong_healing",
+        "to": "strong_harming",
+        "modifier": "corrupting"
+      },
+      {
+        "from": "strong_poison",
+        "to": "strong_harming",
+        "modifier": "corrupting"
+      },
+      {
+        "from": "swiftness",
+        "to": "slowness",
+        "modifier": "corrupting"
+      }
+    ]
+  }
+}
