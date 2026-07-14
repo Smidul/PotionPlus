@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:brewing",
+  "input": {
+    "item": "minecraft:potion",
+    "potion_contents": {
+      "potions": "minecraft:awkward"
+    }
+  },
+  "reagent": {
+    "item": "#overbrew:brewing/effect/levitation"
+  },
+  "output": {
+    "id": "minecraft:potion",
+    "components": {
+      "minecraft:custom_name": {
+        "translate": "item.minecraft.potion.effect.levitation",
+        "fallback": "Potion of Levitation",
+        "italic": false
+      },
+      "minecraft:potion_contents": {
+        "custom_color": 13565951,
+        "custom_effects": [
+          {
+            "id": "minecraft:levitation",
+            "amplifier": 0,
+            "duration": 400,
+            "show_particles": true
+          }
+        ]
+      }
+    }
+  }
+}

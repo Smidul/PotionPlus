@@ -15,7 +15,7 @@ function validateRecipe(filePath: string, value: JsonObject, recipeType: string)
   if (!('id' in value.output)) throw new Error(`Invalid output in ${filePath}`);
 }
 
-/** Validates recipe structure and every generated PotionPlus tag reference. */
+/** Validates recipe structure and every generated Overbrew tag reference. */
 export async function validateGenerated(
   customRecipeRoot: string,
   customNamespaceRoot: string,

@@ -1,6 +1,6 @@
-# PotionPlus
+# Overbrew
 
-PotionPlus adds brewable potions for effects that are normally unavailable and a Resin Clump modifier that removes potion particles.
+Overbrew adds brewable potions for effects that are normally unavailable and a Resin Clump modifier that removes potion particles.
 
 Added effects support every configured potion form. Variant, conversion, cross-effect, and global-modifier recipes are generated from `src/generator/config.json`.
 
@@ -37,7 +37,7 @@ namespaces   Custom and vanilla namespaces
 forms        Potion item forms
 bases        Base-potion brews
 modifiers    Reusable brewing modifiers
-custom       PotionPlus effects and transformations
+custom       Overbrew effects and transformations
 vanilla      Vanilla potion states and transformations
 ```
 
@@ -75,7 +75,7 @@ The default config starts like this:
 
 When enabled, the generator reconstructs vanilla brewing recipes under the configured vanilla namespace and routes their reagents through the item-tag system.
 
-When disabled, PotionPlus recipes and configured global-modifier chains are still generated, but vanilla recipe files are not written.
+When disabled, Overbrew recipes and configured global-modifier chains are still generated, but vanilla recipe files are not written.
 
 ### Output
 
@@ -163,9 +163,9 @@ modifier/<id>
 With the default root, examples are:
 
 ```text
-#potionplus:brewing/base/awkward
-#potionplus:brewing/effect/absorption
-#potionplus:brewing/modifier/extended
+#overbrew:brewing/base/awkward
+#overbrew:brewing/effect/absorption
+#overbrew:brewing/modifier/extended
 ```
 
 The optional `tag` key controls the reagent's own tag.
@@ -418,7 +418,7 @@ Vanilla convertible potion IDs are derived from `water`, every configured base, 
       "output_show_particles": false,
       "lore": [
         {
-          "translate": "potionplus.lore.no_particles",
+          "translate": "overbrew.lore.no_particles",
           "fallback": "No Particles",
           "italic": false,
           "color": "#FC7812"
@@ -443,7 +443,7 @@ Example:
 {
   "output_components": {
     "minecraft:custom_data": {
-      "potionplus": {
+      "overbrew": {
         "particle_free": true
       }
     },
@@ -674,7 +674,7 @@ Direct custom brews and same-form transformations are generated for every config
 ```json
 {
   "namespaces": {
-    "custom": "potionplus",
+    "custom": "overbrew",
     "vanilla": "minecraft"
   },
   "target": {
@@ -683,7 +683,7 @@ Direct custom brews and same-form transformations are generated for every config
 }
 ```
 
-- `namespaces.custom` controls PotionPlus recipe and tag locations.
+- `namespaces.custom` controls Overbrew recipe and tag locations.
 - `namespaces.vanilla` controls vanilla resources, recipe types, and reconstructed recipes.
 - `target.data_pack_version` records the intended data-pack version.
 
@@ -724,8 +724,8 @@ Use complete resource locations in the config. Unnamespaced values use the confi
 This can produce tags such as:
 
 ```text
-#potionplus:brewing/convert/leaping_to_slowness
-#potionplus:brewing/conversion/regular_to_splash
+#overbrew:brewing/convert/leaping_to_slowness
+#overbrew:brewing/conversion/regular_to_splash
 ```
 
 ## Configuration errors
@@ -746,4 +746,4 @@ Fix the reported entry and run the generator again.
 
 ## License
 
-PotionPlus is licensed under the [Smidul Bundle and Addon License 1.0](./LICENSE).
+Overbrew is licensed under the [Smidul Bundle and Addon License 1.0](./LICENSE).

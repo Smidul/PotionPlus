@@ -1,0 +1,22 @@
+{
+  "criteria": {
+    "trigger": {
+      "trigger": "minecraft:tick"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": "Adds missing potions and a new resin clump modifier that removes particles.",
+    "icon": {
+      "id": "minecraft:potion",
+      "components": {
+        "potion_contents": {
+          "custom_color": 5578058
+        }
+      }
+    },
+    "show_toast": false,
+    "title": "Overbrew     "
+  },
+  "parent": "tweakidul:root"
+}

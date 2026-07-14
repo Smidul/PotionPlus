@@ -1,0 +1,52 @@
+{
+  "type": "minecraft:brewing",
+  "input": {
+    "item": "minecraft:lingering_potion",
+    "potion_contents": {
+      "effects": {
+        "contains": [
+          {
+            "minecraft:darkness": {
+              "amplifier": 0,
+              "duration": 4800,
+              "visible": true
+            }
+          }
+        ],
+        "size": 1
+      }
+    }
+  },
+  "reagent": {
+    "item": "#overbrew:brewing/modifier/no_particles"
+  },
+  "output": {
+    "id": "minecraft:lingering_potion",
+    "components": {
+      "minecraft:custom_name": {
+        "translate": "item.minecraft.lingering_potion.effect.darkness",
+        "fallback": "Lingering Potion of Darkness",
+        "italic": false
+      },
+      "minecraft:potion_contents": {
+        "custom_color": 2696993,
+        "custom_effects": [
+          {
+            "id": "minecraft:darkness",
+            "amplifier": 0,
+            "duration": 4800,
+            "show_particles": false
+          }
+        ]
+      },
+      "minecraft:lore": [
+        {
+          "translate": "overbrew.lore.no_particles",
+          "fallback": "No Particles",
+          "italic": false,
+          "color": "#FC7812"
+        }
+      ]
+    }
+  }
+}

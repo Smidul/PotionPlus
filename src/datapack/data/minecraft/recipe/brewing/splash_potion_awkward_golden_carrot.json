@@ -15,6 +15,6 @@
     "id": "minecraft:splash_potion"
   },
   "reagent": {
-    "item": "#potionplus:brewing/effect/night_vision"
+    "item": "#overbrew:brewing/effect/night_vision"
   }
 }

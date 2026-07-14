@@ -6,7 +6,7 @@ export function formByItem(config: GeneratorConfig): Map<string, string> {
   return new Map(Object.entries(config.forms).map(([name, form]) => [form.item, name]));
 }
 
-/** Normalizes every configured PotionPlus effect variant. */
+/** Normalizes every configured Overbrew effect variant. */
 export function customStates(config: GeneratorConfig): Map<string, PotionState> {
   const states = new Map<string, PotionState>();
   for (const [effectKey, effect] of Object.entries(config.custom.effects)) {

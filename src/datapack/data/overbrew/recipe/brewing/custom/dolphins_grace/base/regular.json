@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:brewing",
+  "input": {
+    "item": "minecraft:potion",
+    "potion_contents": {
+      "potions": "minecraft:awkward"
+    }
+  },
+  "reagent": {
+    "item": "#overbrew:brewing/effect/dolphins_grace"
+  },
+  "output": {
+    "id": "minecraft:potion",
+    "components": {
+      "minecraft:custom_name": {
+        "translate": "item.minecraft.potion.effect.dolphins_grace",
+        "fallback": "Potion of Dolphin's Grace",
+        "italic": false
+      },
+      "minecraft:potion_contents": {
+        "custom_color": 8954814,
+        "custom_effects": [
+          {
+            "id": "minecraft:dolphins_grace",
+            "amplifier": 0,
+            "duration": 3600,
+            "show_particles": true
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "type": "minecraft:brewing",
+  "input": {
+    "item": "minecraft:lingering_potion",
+    "potion_contents": {
+      "effects": {
+        "contains": [
+          {
+            "minecraft:wither": {
+              "amplifier": 0,
+              "duration": 800,
+              "visible": true
+            }
+          }
+        ],
+        "size": 1
+      }
+    }
+  },
+  "reagent": {
+    "item": "#overbrew:brewing/modifier/extended"
+  },
+  "output": {
+    "id": "minecraft:lingering_potion",
+    "components": {
+      "minecraft:custom_name": {
+        "translate": "item.minecraft.lingering_potion.effect.withering",
+        "fallback": "Lingering Potion of Withering",
+        "italic": false
+      },
+      "minecraft:potion_contents": {
+        "custom_color": 7561558,
+        "custom_effects": [
+          {
+            "id": "minecraft:wither",
+            "amplifier": 0,
+            "duration": 1800,
+            "show_particles": true
+          }
+        ]
+      }
+    }
+  }
+}

@@ -15,6 +15,6 @@
     "id": "minecraft:potion"
   },
   "reagent": {
-    "item": "#potionplus:brewing/effect/leaping"
+    "item": "#overbrew:brewing/effect/leaping"
   }
 }

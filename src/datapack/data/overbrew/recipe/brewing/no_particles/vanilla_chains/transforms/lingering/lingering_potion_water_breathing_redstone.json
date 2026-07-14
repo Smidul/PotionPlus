@@ -1,0 +1,52 @@
+{
+  "type": "minecraft:brewing",
+  "input": {
+    "item": "minecraft:lingering_potion",
+    "potion_contents": {
+      "effects": {
+        "contains": [
+          {
+            "minecraft:water_breathing": {
+              "amplifier": 0,
+              "duration": 3600,
+              "visible": false
+            }
+          }
+        ],
+        "size": 1
+      }
+    }
+  },
+  "reagent": {
+    "item": "#overbrew:brewing/modifier/extended"
+  },
+  "output": {
+    "id": "minecraft:lingering_potion",
+    "components": {
+      "minecraft:custom_name": {
+        "translate": "item.minecraft.lingering_potion.effect.water_breathing",
+        "fallback": "Lingering Potion of Water Breathing",
+        "italic": false
+      },
+      "minecraft:potion_contents": {
+        "custom_color": 10017472,
+        "custom_effects": [
+          {
+            "id": "minecraft:water_breathing",
+            "amplifier": 0,
+            "duration": 9600,
+            "show_particles": false
+          }
+        ]
+      },
+      "minecraft:lore": [
+        {
+          "translate": "overbrew.lore.no_particles",
+          "fallback": "No Particles",
+          "italic": false,
+          "color": "#FC7812"
+        }
+      ]
+    }
+  }
+}

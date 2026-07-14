@@ -15,6 +15,6 @@
     "id": "minecraft:splash_potion"
   },
   "reagent": {
-    "item": "#potionplus:brewing/modifier/corrupting"
+    "item": "#overbrew:brewing/modifier/corrupting"
   }
 }

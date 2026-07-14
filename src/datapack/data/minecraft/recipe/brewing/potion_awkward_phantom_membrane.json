@@ -15,6 +15,6 @@
     "id": "minecraft:potion"
   },
   "reagent": {
-    "item": "#potionplus:brewing/effect/slow_falling"
+    "item": "#overbrew:brewing/effect/slow_falling"
   }
 }

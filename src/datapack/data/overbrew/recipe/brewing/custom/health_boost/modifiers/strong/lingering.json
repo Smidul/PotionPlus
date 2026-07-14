@@ -1,0 +1,44 @@
+{
+  "type": "minecraft:brewing",
+  "input": {
+    "item": "minecraft:lingering_potion",
+    "potion_contents": {
+      "effects": {
+        "contains": [
+          {
+            "minecraft:health_boost": {
+              "amplifier": 0,
+              "duration": 3600,
+              "visible": true
+            }
+          }
+        ],
+        "size": 1
+      }
+    }
+  },
+  "reagent": {
+    "item": "#overbrew:brewing/modifier/strong"
+  },
+  "output": {
+    "id": "minecraft:lingering_potion",
+    "components": {
+      "minecraft:custom_name": {
+        "translate": "item.minecraft.lingering_potion.effect.health_boost",
+        "fallback": "Lingering Potion of Health Boost",
+        "italic": false
+      },
+      "minecraft:potion_contents": {
+        "custom_color": 16284963,
+        "custom_effects": [
+          {
+            "id": "minecraft:health_boost",
+            "amplifier": 1,
+            "duration": 1800,
+            "show_particles": true
+          }
+        ]
+      }
+    }
+  }
+}

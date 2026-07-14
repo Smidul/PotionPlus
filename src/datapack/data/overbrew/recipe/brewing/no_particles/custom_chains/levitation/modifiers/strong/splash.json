@@ -1,0 +1,52 @@
+{
+  "type": "minecraft:brewing",
+  "input": {
+    "item": "minecraft:splash_potion",
+    "potion_contents": {
+      "effects": {
+        "contains": [
+          {
+            "minecraft:levitation": {
+              "amplifier": 0,
+              "duration": 400,
+              "visible": false
+            }
+          }
+        ],
+        "size": 1
+      }
+    }
+  },
+  "reagent": {
+    "item": "#overbrew:brewing/modifier/strong"
+  },
+  "output": {
+    "id": "minecraft:splash_potion",
+    "components": {
+      "minecraft:custom_name": {
+        "translate": "item.minecraft.splash_potion.effect.levitation",
+        "fallback": "Splash Potion of Levitation",
+        "italic": false
+      },
+      "minecraft:potion_contents": {
+        "custom_color": 13565951,
+        "custom_effects": [
+          {
+            "id": "minecraft:levitation",
+            "amplifier": 1,
+            "duration": 200,
+            "show_particles": false
+          }
+        ]
+      },
+      "minecraft:lore": [
+        {
+          "translate": "overbrew.lore.no_particles",
+          "fallback": "No Particles",
+          "italic": false,
+          "color": "#FC7812"
+        }
+      ]
+    }
+  }
+}

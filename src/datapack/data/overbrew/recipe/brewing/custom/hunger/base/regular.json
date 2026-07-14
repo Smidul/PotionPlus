@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:brewing",
+  "input": {
+    "item": "minecraft:potion",
+    "potion_contents": {
+      "potions": "minecraft:awkward"
+    }
+  },
+  "reagent": {
+    "item": "#overbrew:brewing/effect/hunger"
+  },
+  "output": {
+    "id": "minecraft:potion",
+    "components": {
+      "minecraft:custom_name": {
+        "translate": "item.minecraft.potion.effect.hunger",
+        "fallback": "Potion of Hunger",
+        "italic": false
+      },
+      "minecraft:potion_contents": {
+        "custom_color": 5797459,
+        "custom_effects": [
+          {
+            "id": "minecraft:hunger",
+            "amplifier": 0,
+            "duration": 1800,
+            "show_particles": true
+          }
+        ]
+      }
+    }
+  }
+}

@@ -15,6 +15,6 @@
     "id": "minecraft:splash_potion"
   },
   "reagent": {
-    "item": "#potionplus:brewing/effect/water_breathing"
+    "item": "#overbrew:brewing/effect/water_breathing"
   }
 }

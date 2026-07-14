@@ -1,0 +1,52 @@
+{
+  "type": "minecraft:brewing",
+  "input": {
+    "item": "minecraft:splash_potion",
+    "potion_contents": {
+      "effects": {
+        "contains": [
+          {
+            "minecraft:nausea": {
+              "amplifier": 0,
+              "duration": 1800,
+              "visible": false
+            }
+          }
+        ],
+        "size": 1
+      }
+    }
+  },
+  "reagent": {
+    "item": "#overbrew:brewing/modifier/lingering"
+  },
+  "output": {
+    "id": "minecraft:lingering_potion",
+    "components": {
+      "minecraft:custom_name": {
+        "translate": "item.minecraft.lingering_potion.effect.nausea",
+        "fallback": "Lingering Potion of Nausea",
+        "italic": false
+      },
+      "minecraft:potion_contents": {
+        "custom_color": 5578058,
+        "custom_effects": [
+          {
+            "id": "minecraft:nausea",
+            "amplifier": 0,
+            "duration": 1800,
+            "show_particles": false
+          }
+        ]
+      },
+      "minecraft:lore": [
+        {
+          "translate": "overbrew.lore.no_particles",
+          "fallback": "No Particles",
+          "italic": false,
+          "color": "#FC7812"
+        }
+      ]
+    }
+  }
+}

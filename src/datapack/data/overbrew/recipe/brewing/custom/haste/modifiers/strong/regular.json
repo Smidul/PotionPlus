@@ -1,0 +1,44 @@
+{
+  "type": "minecraft:brewing",
+  "input": {
+    "item": "minecraft:potion",
+    "potion_contents": {
+      "effects": {
+        "contains": [
+          {
+            "minecraft:haste": {
+              "amplifier": 0,
+              "duration": 3600,
+              "visible": true
+            }
+          }
+        ],
+        "size": 1
+      }
+    }
+  },
+  "reagent": {
+    "item": "#overbrew:brewing/modifier/strong"
+  },
+  "output": {
+    "id": "minecraft:potion",
+    "components": {
+      "minecraft:custom_name": {
+        "translate": "item.minecraft.potion.effect.haste",
+        "fallback": "Potion of Haste",
+        "italic": false
+      },
+      "minecraft:potion_contents": {
+        "custom_color": 14270531,
+        "custom_effects": [
+          {
+            "id": "minecraft:haste",
+            "amplifier": 1,
+            "duration": 1800,
+            "show_particles": true
+          }
+        ]
+      }
+    }
+  }
+}

@@ -15,6 +15,6 @@
     "id": "minecraft:potion"
   },
   "reagent": {
-    "item": "#potionplus:brewing/effect/turtle_master"
+    "item": "#overbrew:brewing/effect/turtle_master"
   }
 }

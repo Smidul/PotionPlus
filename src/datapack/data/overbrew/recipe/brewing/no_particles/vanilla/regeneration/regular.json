@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:brewing",
+  "input": {
+    "item": "minecraft:potion",
+    "potion_contents": {
+      "potions": "minecraft:regeneration"
+    }
+  },
+  "reagent": {
+    "item": "#overbrew:brewing/modifier/no_particles"
+  },
+  "output": {
+    "id": "minecraft:potion",
+    "components": {
+      "minecraft:custom_name": {
+        "translate": "item.minecraft.potion.effect.regeneration",
+        "fallback": "Potion of Regeneration",
+        "italic": false
+      },
+      "minecraft:potion_contents": {
+        "custom_color": 13458603,
+        "custom_effects": [
+          {
+            "id": "minecraft:regeneration",
+            "amplifier": 0,
+            "duration": 900,
+            "show_particles": false
+          }
+        ]
+      },
+      "minecraft:lore": [
+        {
+          "translate": "overbrew.lore.no_particles",
+          "fallback": "No Particles",
+          "italic": false,
+          "color": "#FC7812"
+        }
+      ]
+    }
+  }
+}

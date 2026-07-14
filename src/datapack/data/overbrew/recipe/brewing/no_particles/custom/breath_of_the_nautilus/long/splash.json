@@ -1,0 +1,52 @@
+{
+  "type": "minecraft:brewing",
+  "input": {
+    "item": "minecraft:splash_potion",
+    "potion_contents": {
+      "effects": {
+        "contains": [
+          {
+            "minecraft:breath_of_the_nautilus": {
+              "amplifier": 0,
+              "duration": 9600,
+              "visible": true
+            }
+          }
+        ],
+        "size": 1
+      }
+    }
+  },
+  "reagent": {
+    "item": "#overbrew:brewing/modifier/no_particles"
+  },
+  "output": {
+    "id": "minecraft:splash_potion",
+    "components": {
+      "minecraft:custom_name": {
+        "translate": "item.minecraft.splash_potion.effect.breath_of_the_nautilus",
+        "fallback": "Splash Potion of Breath of the Nautilus",
+        "italic": false
+      },
+      "minecraft:potion_contents": {
+        "custom_color": 65518,
+        "custom_effects": [
+          {
+            "id": "minecraft:breath_of_the_nautilus",
+            "amplifier": 0,
+            "duration": 9600,
+            "show_particles": false
+          }
+        ]
+      },
+      "minecraft:lore": [
+        {
+          "translate": "overbrew.lore.no_particles",
+          "fallback": "No Particles",
+          "italic": false,
+          "color": "#FC7812"
+        }
+      ]
+    }
+  }
+}

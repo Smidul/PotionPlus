@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:brewing",
+  "input": {
+    "item": "minecraft:potion",
+    "potion_contents": {
+      "potions": "minecraft:awkward"
+    }
+  },
+  "reagent": {
+    "item": "#overbrew:brewing/effect/hero_of_the_village"
+  },
+  "output": {
+    "id": "minecraft:potion",
+    "components": {
+      "minecraft:custom_name": {
+        "translate": "item.minecraft.potion.effect.hero_of_the_village",
+        "fallback": "Potion of Hero of the Village",
+        "italic": false
+      },
+      "minecraft:potion_contents": {
+        "custom_color": 4521796,
+        "custom_effects": [
+          {
+            "id": "minecraft:hero_of_the_village",
+            "amplifier": 0,
+            "duration": 3600,
+            "show_particles": true
+          }
+        ]
+      }
+    }
+  }
+}

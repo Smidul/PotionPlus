@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:brewing",
+  "input": {
+    "item": "minecraft:potion",
+    "potion_contents": {
+      "potions": "minecraft:strong_healing"
+    }
+  },
+  "reagent": {
+    "item": "#overbrew:brewing/modifier/no_particles"
+  },
+  "output": {
+    "id": "minecraft:potion",
+    "components": {
+      "minecraft:custom_name": {
+        "translate": "item.minecraft.potion.effect.healing",
+        "fallback": "Potion of Healing",
+        "italic": false
+      },
+      "minecraft:potion_contents": {
+        "custom_color": 16262179,
+        "custom_effects": [
+          {
+            "id": "minecraft:instant_health",
+            "amplifier": 1,
+            "duration": 1,
+            "show_particles": false
+          }
+        ]
+      },
+      "minecraft:lore": [
+        {
+          "translate": "overbrew.lore.no_particles",
+          "fallback": "No Particles",
+          "italic": false,
+          "color": "#FC7812"
+        }
+      ]
+    }
+  }
+}

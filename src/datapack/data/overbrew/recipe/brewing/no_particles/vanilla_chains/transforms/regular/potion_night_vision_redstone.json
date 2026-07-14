@@ -1,0 +1,52 @@
+{
+  "type": "minecraft:brewing",
+  "input": {
+    "item": "minecraft:potion",
+    "potion_contents": {
+      "effects": {
+        "contains": [
+          {
+            "minecraft:night_vision": {
+              "amplifier": 0,
+              "duration": 3600,
+              "visible": false
+            }
+          }
+        ],
+        "size": 1
+      }
+    }
+  },
+  "reagent": {
+    "item": "#overbrew:brewing/modifier/extended"
+  },
+  "output": {
+    "id": "minecraft:potion",
+    "components": {
+      "minecraft:custom_name": {
+        "translate": "item.minecraft.potion.effect.night_vision",
+        "fallback": "Potion of Night Vision",
+        "italic": false
+      },
+      "minecraft:potion_contents": {
+        "custom_color": 12779366,
+        "custom_effects": [
+          {
+            "id": "minecraft:night_vision",
+            "amplifier": 0,
+            "duration": 9600,
+            "show_particles": false
+          }
+        ]
+      },
+      "minecraft:lore": [
+        {
+          "translate": "overbrew.lore.no_particles",
+          "fallback": "No Particles",
+          "italic": false,
+          "color": "#FC7812"
+        }
+      ]
+    }
+  }
+}

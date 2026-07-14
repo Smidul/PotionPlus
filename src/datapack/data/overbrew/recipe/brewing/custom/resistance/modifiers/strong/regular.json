@@ -1,0 +1,44 @@
+{
+  "type": "minecraft:brewing",
+  "input": {
+    "item": "minecraft:potion",
+    "potion_contents": {
+      "effects": {
+        "contains": [
+          {
+            "minecraft:resistance": {
+              "amplifier": 0,
+              "duration": 3600,
+              "visible": true
+            }
+          }
+        ],
+        "size": 1
+      }
+    }
+  },
+  "reagent": {
+    "item": "#overbrew:brewing/modifier/strong"
+  },
+  "output": {
+    "id": "minecraft:potion",
+    "components": {
+      "minecraft:custom_name": {
+        "translate": "item.minecraft.potion.effect.resistance",
+        "fallback": "Potion of Resistance",
+        "italic": false
+      },
+      "minecraft:potion_contents": {
+        "custom_color": 9520880,
+        "custom_effects": [
+          {
+            "id": "minecraft:resistance",
+            "amplifier": 1,
+            "duration": 1800,
+            "show_particles": true
+          }
+        ]
+      }
+    }
+  }
+}

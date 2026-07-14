@@ -1,7 +1,7 @@
 /** A JSON object accepted by Minecraft data files or generator configuration. */
 export type JsonObject = Record<string, any>;
 
-/** Identifies whether a normalized potion state comes from PotionPlus or vanilla. */
+/** Identifies whether a normalized potion state comes from Overbrew or vanilla. */
 export type PotionSource = 'custom' | 'vanilla';
 
 /** A normalized potion state shared by all recipe generation stages. */
@@ -16,7 +16,7 @@ export interface PotionState {
   color: number;
   /** Normalized custom effects written to outputs and matched by predicates. */
   effects: JsonObject[];
-  /** Whether the state was defined by PotionPlus or the vanilla model. */
+  /** Whether the state was defined by Overbrew or the vanilla model. */
   source: PotionSource;
 }
 
@@ -153,7 +153,7 @@ export interface ModifierConfig extends JsonObject {
   global?: JsonObject;
 }
 
-/** One PotionPlus effect and all of its potion variants. */
+/** One Overbrew effect and all of its potion variants. */
 export interface CustomEffectConfig extends JsonObject {
   /** Minecraft status-effect ID. */
   effect_id: string;
@@ -183,7 +183,7 @@ export interface VanillaPotionConfig extends JsonObject {
   brew?: BrewMap;
 }
 
-/** A configured custom transformation between two PotionPlus effects. */
+/** A configured custom transformation between two Overbrew effects. */
 export interface CustomCrossEffectTransform extends JsonObject {
   id: string;
   from_effect: string;
@@ -200,7 +200,7 @@ export interface VanillaCrossEffectTransform {
   modifier: string;
 }
 
-/** PotionPlus-owned model. */
+/** Overbrew-owned model. */
 export interface CustomConfig {
   /** Custom brewable effects. */
   effects: Record<string, CustomEffectConfig>;
@@ -245,7 +245,7 @@ export interface GeneratorConfig extends JsonObject {
   bases: Record<string, BaseConfig>;
   /** Shared recipe modifiers and their reagents. */
   modifiers: Record<string, ModifierConfig>;
-  /** PotionPlus-owned effects and transformations. */
+  /** Overbrew-owned effects and transformations. */
   custom: CustomConfig;
   /** Vanilla potion states and transformations. */
   vanilla: VanillaConfig;

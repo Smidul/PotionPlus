@@ -131,7 +131,7 @@ function tagSettings(
 }
 
 /**
- * Owns PotionPlus reagent tags and selects the item or tag used by each recipe.
+ * Owns Overbrew reagent tags and selects the item or tag used by each recipe.
  *
  * Reagent values live beside their base, effect, or modifier definitions. The
  * singular `auto_generate` entries add optional contextual layers without

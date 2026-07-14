@@ -15,6 +15,6 @@
     "id": "minecraft:potion"
   },
   "reagent": {
-    "item": "#potionplus:brewing/effect/swiftness"
+    "item": "#overbrew:brewing/effect/swiftness"
   }
 }

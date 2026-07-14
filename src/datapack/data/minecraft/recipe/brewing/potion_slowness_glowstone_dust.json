@@ -15,6 +15,6 @@
     "id": "minecraft:potion"
   },
   "reagent": {
-    "item": "#potionplus:brewing/modifier/strong"
+    "item": "#overbrew:brewing/modifier/strong"
   }
 }

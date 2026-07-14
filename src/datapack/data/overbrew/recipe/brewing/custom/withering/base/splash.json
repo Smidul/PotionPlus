@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:brewing",
+  "input": {
+    "item": "minecraft:splash_potion",
+    "potion_contents": {
+      "potions": "minecraft:awkward"
+    }
+  },
+  "reagent": {
+    "item": "#overbrew:brewing/effect/withering"
+  },
+  "output": {
+    "id": "minecraft:splash_potion",
+    "components": {
+      "minecraft:custom_name": {
+        "translate": "item.minecraft.splash_potion.effect.withering",
+        "fallback": "Splash Potion of Withering",
+        "italic": false
+      },
+      "minecraft:potion_contents": {
+        "custom_color": 7561558,
+        "custom_effects": [
+          {
+            "id": "minecraft:wither",
+            "amplifier": 0,
+            "duration": 800,
+            "show_particles": true
+          }
+        ]
+      }
+    }
+  }
+}

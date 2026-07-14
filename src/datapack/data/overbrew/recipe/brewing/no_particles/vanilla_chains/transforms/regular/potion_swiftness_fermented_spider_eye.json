@@ -1,0 +1,52 @@
+{
+  "type": "minecraft:brewing",
+  "input": {
+    "item": "minecraft:potion",
+    "potion_contents": {
+      "effects": {
+        "contains": [
+          {
+            "minecraft:speed": {
+              "amplifier": 0,
+              "duration": 3600,
+              "visible": false
+            }
+          }
+        ],
+        "size": 1
+      }
+    }
+  },
+  "reagent": {
+    "item": "#overbrew:brewing/modifier/corrupting"
+  },
+  "output": {
+    "id": "minecraft:potion",
+    "components": {
+      "minecraft:custom_name": {
+        "translate": "item.minecraft.potion.effect.slowness",
+        "fallback": "Potion of Slowness",
+        "italic": false
+      },
+      "minecraft:potion_contents": {
+        "custom_color": 9154528,
+        "custom_effects": [
+          {
+            "id": "minecraft:slowness",
+            "amplifier": 0,
+            "duration": 1800,
+            "show_particles": false
+          }
+        ]
+      },
+      "minecraft:lore": [
+        {
+          "translate": "overbrew.lore.no_particles",
+          "fallback": "No Particles",
+          "italic": false,
+          "color": "#FC7812"
+        }
+      ]
+    }
+  }
+}

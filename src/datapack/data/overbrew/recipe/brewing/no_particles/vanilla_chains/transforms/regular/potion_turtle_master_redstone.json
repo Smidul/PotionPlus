@@ -1,0 +1,65 @@
+{
+  "type": "minecraft:brewing",
+  "input": {
+    "item": "minecraft:potion",
+    "potion_contents": {
+      "effects": {
+        "contains": [
+          {
+            "minecraft:slowness": {
+              "amplifier": 3,
+              "duration": 400,
+              "visible": false
+            }
+          },
+          {
+            "minecraft:resistance": {
+              "amplifier": 2,
+              "duration": 400,
+              "visible": false
+            }
+          }
+        ],
+        "size": 2
+      }
+    }
+  },
+  "reagent": {
+    "item": "#overbrew:brewing/modifier/extended"
+  },
+  "output": {
+    "id": "minecraft:potion",
+    "components": {
+      "minecraft:custom_name": {
+        "translate": "item.minecraft.potion.effect.turtle_master",
+        "fallback": "Potion of Turtle Master",
+        "italic": false
+      },
+      "minecraft:potion_contents": {
+        "custom_color": 9274086,
+        "custom_effects": [
+          {
+            "id": "minecraft:slowness",
+            "amplifier": 3,
+            "duration": 800,
+            "show_particles": false
+          },
+          {
+            "id": "minecraft:resistance",
+            "amplifier": 2,
+            "duration": 800,
+            "show_particles": false
+          }
+        ]
+      },
+      "minecraft:lore": [
+        {
+          "translate": "overbrew.lore.no_particles",
+          "fallback": "No Particles",
+          "italic": false,
+          "color": "#FC7812"
+        }
+      ]
+    }
+  }
+}

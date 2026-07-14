@@ -1,0 +1,44 @@
+{
+  "type": "minecraft:brewing",
+  "input": {
+    "item": "minecraft:potion",
+    "potion_contents": {
+      "effects": {
+        "contains": [
+          {
+            "minecraft:glowing": {
+              "amplifier": 0,
+              "duration": 3600,
+              "visible": true
+            }
+          }
+        ],
+        "size": 1
+      }
+    }
+  },
+  "reagent": {
+    "item": "#overbrew:brewing/modifier/extended"
+  },
+  "output": {
+    "id": "minecraft:potion",
+    "components": {
+      "minecraft:custom_name": {
+        "translate": "item.minecraft.potion.effect.glowing",
+        "fallback": "Potion of Glowing",
+        "italic": false
+      },
+      "minecraft:potion_contents": {
+        "custom_color": 9740385,
+        "custom_effects": [
+          {
+            "id": "minecraft:glowing",
+            "amplifier": 0,
+            "duration": 9600,
+            "show_particles": true
+          }
+        ]
+      }
+    }
+  }
+}

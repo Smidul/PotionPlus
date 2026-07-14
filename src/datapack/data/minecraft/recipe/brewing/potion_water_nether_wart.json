@@ -15,6 +15,6 @@
     "id": "minecraft:potion"
   },
   "reagent": {
-    "item": "#potionplus:brewing/base/awkward"
+    "item": "#overbrew:brewing/base/awkward"
   }
 }
