@@ -1,0 +1,44 @@
+{
+  "type": "minecraft:brewing",
+  "input": {
+    "item": "minecraft:potion",
+    "potion_contents": {
+      "effects": {
+        "contains": [
+          {
+            "minecraft:saturation": {
+              "amplifier": 0,
+              "duration": 160,
+              "visible": true
+            }
+          }
+        ],
+        "size": 1
+      }
+    }
+  },
+  "reagent": {
+    "item": "#overbrew:brewing/modifier/corrupting"
+  },
+  "output": {
+    "id": "minecraft:potion",
+    "components": {
+      "minecraft:custom_name": {
+        "translate": "item.minecraft.potion.effect.hunger",
+        "fallback": "Potion of Hunger",
+        "italic": false
+      },
+      "minecraft:potion_contents": {
+        "custom_color": 5797459,
+        "custom_effects": [
+          {
+            "id": "minecraft:hunger",
+            "amplifier": 0,
+            "duration": 1800,
+            "show_particles": true
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "type": "minecraft:brewing",
+  "input": {
+    "item": "minecraft:potion",
+    "potion_contents": {
+      "effects": {
+        "contains": [
+          {
+            "minecraft:luck": {
+              "amplifier": 0,
+              "duration": 6000,
+              "visible": true
+            }
+          }
+        ],
+        "size": 1
+      }
+    }
+  },
+  "reagent": {
+    "item": "#overbrew:brewing/modifier/corrupting"
+  },
+  "output": {
+    "id": "minecraft:potion",
+    "components": {
+      "minecraft:custom_name": {
+        "translate": "item.minecraft.potion.effect.bad_luck",
+        "fallback": "Potion of Bad Luck",
+        "italic": false
+      },
+      "minecraft:potion_contents": {
+        "custom_color": 12624973,
+        "custom_effects": [
+          {
+            "id": "minecraft:unluck",
+            "amplifier": 0,
+            "duration": 6000,
+            "show_particles": true
+          }
+        ]
+      }
+    }
+  }
+}

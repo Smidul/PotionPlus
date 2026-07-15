@@ -8,7 +8,7 @@
           {
             "minecraft:levitation": {
               "amplifier": 0,
-              "duration": 900,
+              "duration": 800,
               "visible": true
             }
           }
@@ -34,7 +34,7 @@
           {
             "id": "minecraft:levitation",
             "amplifier": 0,
-            "duration": 900,
+            "duration": 800,
             "show_particles": true
           }
         ]

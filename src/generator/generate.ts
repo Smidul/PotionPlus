@@ -54,6 +54,11 @@ export function vanillaRecipeRoot(namespaceRoot: string): string {
   return joinPath(namespaceRoot, 'recipe');
 }
 
+/** Returns the generated component-preserving tipped-arrow recipe path. */
+export function componentPreservingTippedArrowPath(namespaceRoot: string): string {
+  return joinPath(vanillaRecipeRoot(namespaceRoot), 'tipped_arrow.json');
+}
+
 async function forForms(
   config: GeneratorConfig,
   task: (form: string, formData: JsonObject) => Promise<void>,
@@ -521,6 +526,39 @@ async function generateHiddenVanillaChains(
   return count;
 }
 
+function componentPreservingTippedArrowRecipe(config: GeneratorConfig): JsonObject {
+  const namespace = config.namespaces.vanilla,
+   lingering = config.forms.lingering;
+  if (!lingering) throw new Error('Component-preserving tipped arrows require the lingering form');
+
+  return {
+    type: `${namespace}:crafting_transmute`,
+    category: 'misc',
+    input: lingering.item,
+    material: `${namespace}:arrow`,
+    material_count: 8,
+    result: {
+      id: `${namespace}:tipped_arrow`,
+      count: 8,
+      components: {
+        '!minecraft:custom_name': {},
+      },
+    },
+  };
+}
+
+async function generateComponentPreservingTippedArrows(
+  config: GeneratorConfig,
+  vanillaNamespaceRoot: string,
+): Promise<number> {
+  if (config.generator.preserve_imbued_components === false) return 0;
+  await writeJson(
+    componentPreservingTippedArrowPath(vanillaNamespaceRoot),
+    componentPreservingTippedArrowRecipe(config),
+  );
+  return 1;
+}
+
 /** Runs every recipe generation stage and returns detailed counts. */
 export async function generateRecipes(
   config: GeneratorConfig,
@@ -544,6 +582,10 @@ export async function generateRecipes(
       vanilla,
       tags,
       includeVanilla,
+    ),
+    component_preserving_imbue: await generateComponentPreservingTippedArrows(
+      config,
+      paths.vanillaNamespaceRoot,
     ),
     included_vanilla: await generateVanillaRecipes(paths.vanillaNamespaceRoot, vanillaRecipes, tags, includeVanilla),
   };

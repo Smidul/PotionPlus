@@ -4,6 +4,7 @@
   },
   "generator": {
     "include_vanilla_recipes": true,
+    "preserve_imbued_components": true,
     "item_tags": {
       "enabled": true,
       "root": "brewing",
@@ -121,14 +122,16 @@
         "apply_to": ["custom", "vanilla"],
         "input_show_particles": true,
         "output_show_particles": false,
-        "lore": [
-          {
-            "translate": "overbrew.lore.no_particles",
-            "fallback": "No Particles",
-            "italic": false,
-            "color": "#FC7812"
-          }
-        ]
+        "components": {
+          "minecraft:lore": [
+            {
+              "translate": "overbrew.lore.no_particles",
+              "fallback": "No Particles",
+              "italic": false,
+              "color": "#FC7812"
+            }
+          ]
+        }
       }
     }
   },
@@ -265,6 +268,31 @@
         "brew": {
           "awkward": {
             "items": ["minecraft:echo_shard"]
+          }
+        }
+      },
+      "decay": {
+        "effect_id": "minecraft:wither",
+        "display": "Decay",
+        "translation_suffix": "decay",
+        "variants": {
+          "base": {
+            "duration": 800,
+            "amplifier": 1
+          },
+          "long": {
+            "duration": 1800,
+            "amplifier": 1
+          },
+          "strong": {
+            "duration": 400,
+            "amplifier": 2
+          }
+        },
+        "color": 4996665,
+        "brew": {
+          "awkward": {
+            "items": ["minecraft:wither_skeleton_skull"]
           }
         }
       },
@@ -420,7 +448,7 @@
             "amplifier": 0
           },
           "long": {
-            "duration": 900,
+            "duration": 800,
             "amplifier": 0
           },
           "strong": {
@@ -582,7 +610,74 @@
         }
       }
     },
-    "cross_effect_transforms": []
+    "cross_effect_transforms": [
+      {
+        "id": "corrupt_luck_to_bad_luck",
+        "from_effect": "luck",
+        "to_effect": "bad_luck",
+        "modifier": "corrupting"
+      },
+      {
+        "id": "corrupt_long_luck_to_long_bad_luck",
+        "from_effect": "luck",
+        "to_effect": "bad_luck",
+        "from_variant": "long",
+        "to_variant": "long",
+        "modifier": "corrupting"
+      },
+      {
+        "id": "corrupt_strong_luck_to_strong_bad_luck",
+        "from_effect": "luck",
+        "to_effect": "bad_luck",
+        "from_variant": "strong",
+        "to_variant": "strong",
+        "modifier": "corrupting"
+      },
+      {
+        "id": "corrupt_haste_to_mining_fatigue",
+        "from_effect": "haste",
+        "to_effect": "mining_fatigue",
+        "modifier": "corrupting"
+      },
+      {
+        "id": "corrupt_long_haste_to_long_mining_fatigue",
+        "from_effect": "haste",
+        "to_effect": "mining_fatigue",
+        "from_variant": "long",
+        "to_variant": "long",
+        "modifier": "corrupting"
+      },
+      {
+        "id": "corrupt_strong_haste_to_strong_mining_fatigue",
+        "from_effect": "haste",
+        "to_effect": "mining_fatigue",
+        "from_variant": "strong",
+        "to_variant": "strong",
+        "modifier": "corrupting"
+      },
+      {
+        "id": "corrupt_saturation_to_hunger",
+        "from_effect": "saturation",
+        "to_effect": "hunger",
+        "modifier": "corrupting"
+      },
+      {
+        "id": "corrupt_long_saturation_to_long_hunger",
+        "from_effect": "saturation",
+        "to_effect": "hunger",
+        "from_variant": "long",
+        "to_variant": "long",
+        "modifier": "corrupting"
+      },
+      {
+        "id": "corrupt_strong_saturation_to_strong_hunger",
+        "from_effect": "saturation",
+        "to_effect": "hunger",
+        "from_variant": "strong",
+        "to_variant": "strong",
+        "modifier": "corrupting"
+      }
+    ]
   },
   "vanilla": {
     "potions": {
@@ -1135,6 +1230,9 @@
         ],
         "brew": {
           "water": {
+            "items": ["minecraft:fermented_spider_eye"]
+          },
+          "mundane": {
             "items": ["minecraft:fermented_spider_eye"]
           }
         }

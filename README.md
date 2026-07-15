@@ -26,7 +26,7 @@ bun src/generator/index.ts path/to/config.json
 
 Config-relative paths are resolved from the selected config file.
 
-The generator recreates only the brewing recipe and generated item-tag folders it owns. Other datapack files are preserved. Generated brewing data is ignored by Git, so run the generator before testing or packaging the datapack.
+The generator recreates only the brewing recipes, generated item-tag folders, and vanilla tipped-arrow recipe it owns. Other datapack files are preserved. Before finishing, it validates generated recipe structures, generated item-tag references, and generation counts. Generated data is ignored by Git, so run the generator before testing or packaging the datapack.
 
 ## Config layout
 
@@ -50,6 +50,7 @@ The default config starts like this:
   },
   "generator": {
     "include_vanilla_recipes": true,
+    "preserve_imbued_components": true,
     "item_tags": {
       "enabled": true,
       "root": "brewing",
@@ -77,6 +78,26 @@ When enabled, the generator reconstructs vanilla brewing recipes under the confi
 
 When disabled, Overbrew recipes and configured global-modifier chains are still generated, but vanilla recipe files are not written.
 
+### Component-preserving tipped arrows
+
+```json
+{
+  "preserve_imbued_components": true
+}
+```
+
+This setting defaults to `true`. It replaces the vanilla `tipped_arrow.json` recipe with a `crafting_transmute` recipe that combines one configured lingering-potion item with eight arrows and produces eight tipped arrows.
+
+The transmutation copies the lingering potion's components to the arrows, allowing custom potion contents, colors, lore, and other compatible components to survive crafting. The generated output removes `minecraft:custom_name` so the result uses the tipped-arrow name instead of the potion name.
+
+The replacement is written to:
+
+```text
+data/<vanilla namespace>/recipe/tipped_arrow.json
+```
+
+The configured `lingering` form must exist while this setting is enabled. Set the option to `false` to omit the replacement recipe.
+
 ### Output
 
 ```json
@@ -89,9 +110,9 @@ When disabled, Overbrew recipes and configured global-modifier chains are still 
 ```
 
 - `root` points to the datapack's `data` folder.
-- `manifest` is optional and writes the printed generation summary to a JSON file.
+- `manifest` is optional and writes the same generation summary printed to standard output.
 
-Both paths are relative to the config file.
+The summary includes resolved namespace paths, per-stage generation counts, the validated recipe total, and the generated item-tag total. Both paths are relative to the config file.
 
 ## Brew maps
 
@@ -416,14 +437,16 @@ Vanilla convertible potion IDs are derived from `water`, every configured base, 
       "apply_to": ["custom", "vanilla"],
       "input_show_particles": true,
       "output_show_particles": false,
-      "lore": [
-        {
-          "translate": "overbrew.lore.no_particles",
-          "fallback": "No Particles",
-          "italic": false,
-          "color": "#FC7812"
-        }
-      ]
+      "components": {
+        "minecraft:lore": [
+          {
+            "translate": "overbrew.lore.no_particles",
+            "fallback": "No Particles",
+            "italic": false,
+            "color": "#FC7812"
+          }
+        ]
+      }
     }
   }
 }
@@ -434,14 +457,13 @@ Vanilla convertible potion IDs are derived from `water`, every configured base, 
 | `apply_to`              | Selects `custom`, `vanilla`, or both. Defaults to both.    |
 | `input_show_particles`  | Particle state required on the input. Defaults to `true`.  |
 | `output_show_particles` | Particle state written to the output. Defaults to `false`. |
-| `lore`                  | Writes the output's `minecraft:lore` component.            |
-| `output_components`     | Adds, replaces, or removes other output item components.   |
+| `components`            | Adds, replaces, or removes output item components.         |
 
 Example:
 
 ```json
 {
-  "output_components": {
+  "components": {
     "minecraft:custom_data": {
       "overbrew": {
         "particle_free": true
@@ -452,7 +474,7 @@ Example:
 }
 ```
 
-Set a component value to `null` to remove it from the output stack.
+The component patch is applied to the generated potion stack. A component value of `null` removes that component from the output.
 
 A particle-hiding global modifier also receives compatible custom and vanilla transformation chains, allowing the modified potions to continue through configured variants, form conversions, and cross-effect transformations.
 
@@ -741,6 +763,7 @@ Generation stops when the config is ambiguous or invalid, including:
 - rules without a matcher or inferable `convert` path
 - disabled tags that resolve to more than one direct item
 - duplicate generated recipe paths
+- component-preserving tipped arrows enabled without a configured `lingering` form
 
 Fix the reported entry and run the generator again.
 

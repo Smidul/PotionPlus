@@ -1,9 +1,9 @@
 import type { JsonObject, LoadedRecipe } from './types.ts';
 import { IngredientTagRegistry } from './tags.ts';
 import { joinPath, listJsonFiles, readJson, removeFile } from './utils.ts';
-import { vanillaRecipeRoot } from './generate.ts';
+import { componentPreservingTippedArrowPath, vanillaRecipeRoot } from './generate.ts';
 
-function validateRecipe(filePath: string, value: JsonObject, recipeType: string): void {
+function validateBrewingRecipe(filePath: string, value: JsonObject, recipeType: string): void {
   if (value.type !== recipeType) throw new Error(`Wrong recipe type in ${filePath}`);
   for (const key of ['input', 'reagent', 'output'])
     if (!(key in value)) throw new Error(`Missing ${key} in ${filePath}`);
@@ -15,6 +15,21 @@ function validateRecipe(filePath: string, value: JsonObject, recipeType: string)
   if (!('id' in value.output)) throw new Error(`Invalid output in ${filePath}`);
 }
 
+function validateComponentPreservingImbue(
+  filePath: string,
+  value: JsonObject,
+  namespace: string,
+): void {
+  if (value.type !== `${namespace}:crafting_transmute`)
+    throw new Error(`Wrong tipped-arrow recipe type in ${filePath}`);
+
+  if (value.material_count !== 8)
+    throw new Error(`Component-preserving tipped arrows must require eight arrows in ${filePath}`);
+
+  if (value.result?.id !== `${namespace}:tipped_arrow` || value.result?.count !== 8)
+    throw new Error(`Invalid tipped-arrow result in ${filePath}`);
+}
+
 /** Validates recipe structure and every generated Overbrew tag reference. */
 export async function validateGenerated(
   customRecipeRoot: string,
@@ -22,6 +37,7 @@ export async function validateGenerated(
   vanillaNamespaceRoot: string,
   vanillaRecipes: LoadedRecipe[],
   includeVanilla: boolean,
+  preserveImbuedComponents: boolean,
   tags: IngredientTagRegistry,
   vanillaNamespace: string,
 ): Promise<[recipeCount: number, tagCount: number]> {
@@ -35,6 +51,13 @@ export async function validateGenerated(
 
       recipePaths.push(filePath);
     }
+  }
+
+  if (preserveImbuedComponents) {
+    const imbuePath = componentPreservingTippedArrowPath(vanillaNamespaceRoot);
+    if (!(await Bun.file(imbuePath).exists()))
+      throw new Error(`Missing component-preserving tipped-arrow recipe: ${imbuePath}`);
+    recipePaths.push(imbuePath);
   }
 
   const tagRoot = joinPath(customNamespaceRoot, 'tags', 'item', tags.root),
@@ -51,8 +74,10 @@ export async function validateGenerated(
 
   for (const filePath of recipePaths) {
     const recipe = await readJson(filePath);
-    validateRecipe(filePath, recipe, `${vanillaNamespace}:brewing`);
-    if (typeof recipe.reagent?.item === 'string') requireTag(recipe.reagent.item);
+    if (recipe.type === `${vanillaNamespace}:crafting_transmute`) { validateComponentPreservingImbue(filePath, recipe, vanillaNamespace); } else {
+      validateBrewingRecipe(filePath, recipe, `${vanillaNamespace}:brewing`);
+      if (typeof recipe.reagent?.item === 'string') requireTag(recipe.reagent.item);
+    }
   }
 
   for (const filePath of tagPaths) {

@@ -141,6 +141,21 @@ export interface BaseConfig extends JsonObject {
   brew: BrewMap;
 }
 
+/** Output-preserving behavior applied by a global modifier. */
+export interface GlobalModifierConfig extends JsonObject {
+  /** Potion sources affected by this modifier. */
+  apply_to?: PotionSource[];
+  /** Particle state required on the input potion. */
+  input_show_particles?: boolean;
+  /** Particle state written to the output potion. */
+  output_show_particles?: boolean;
+  /**
+   * Component patch applied to the generated output stack. A `null` value
+   * removes the component.
+   */
+  components?: JsonObject;
+}
+
 /** One reusable brewing modifier. */
 export interface ModifierConfig extends JsonObject {
   /** Reagent accepted by recipes using this modifier. */
@@ -150,7 +165,7 @@ export interface ModifierConfig extends JsonObject {
   /** Container transition, such as `regular` to `splash`. */
   container_conversion?: { from: string; to: string };
   /** Output-preserving behavior, such as hiding particles or adding components. */
-  global?: JsonObject;
+  global?: GlobalModifierConfig;
 }
 
 /** One Overbrew effect and all of its potion variants. */
@@ -220,6 +235,11 @@ export interface VanillaConfig {
 export interface GeneratorOptions {
   /** Recreates vanilla brewing recipes with only `reagent.item` changed to tags. */
   include_vanilla_recipes?: boolean;
+  /**
+   * Replaces the vanilla tipped-arrow recipe with a component-preserving
+   * transmutation recipe.
+   */
+  preserve_imbued_components?: boolean;
   /** Generated item-tag behavior. */
   item_tags?: ItemTagsConfig;
   /** Output paths resolved relative to the loaded config file. */

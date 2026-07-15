@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_transmute",
+  "category": "misc",
+  "input": "minecraft:lingering_potion",
+  "material": "minecraft:arrow",
+  "material_count": 8,
+  "result": {
+    "id": "minecraft:tipped_arrow",
+    "count": 8,
+    "components": {
+      "!minecraft:custom_name": {}
+    }
+  }
+}

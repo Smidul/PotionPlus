@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:brewing",
+  "input": {
+    "item": "minecraft:potion",
+    "potion_contents": {
+      "potions": "minecraft:awkward"
+    }
+  },
+  "reagent": {
+    "item": "#overbrew:brewing/effect/decay"
+  },
+  "output": {
+    "id": "minecraft:potion",
+    "components": {
+      "minecraft:custom_name": {
+        "translate": "item.minecraft.potion.effect.decay",
+        "fallback": "Potion of Decay",
+        "italic": false
+      },
+      "minecraft:potion_contents": {
+        "custom_color": 4996665,
+        "custom_effects": [
+          {
+            "id": "minecraft:wither",
+            "amplifier": 1,
+            "duration": 800,
+            "show_particles": true
+          }
+        ]
+      }
+    }
+  }
+}

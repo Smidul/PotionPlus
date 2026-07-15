@@ -83,16 +83,15 @@ function itemName(config: GeneratorConfig, state: PotionState, form: string): Js
 }
 
 /**
- * Builds a potion item stack. Extra components may add or replace any output
- * item component; a `null` component value removes that component.
+ * Builds a potion item stack and applies an optional component patch.
+ * A `null` value removes the matching component.
  */
 export function outputStack(
   config: GeneratorConfig,
   state: PotionState,
   form: string,
   showParticles: boolean,
-  lore?: JsonObject[] | null,
-  extraComponents?: JsonObject | null,
+  componentPatch?: JsonObject | null,
 ): JsonObject {
   const components: JsonObject = {
     'minecraft:custom_name': itemName(config, state, form),
@@ -106,20 +105,16 @@ export function outputStack(
       })),
     },
   };
-  if (lore?.length) components['minecraft:lore'] = lore;
-  for (const [component, value] of Object.entries(extraComponents ?? {})) {
+
+  for (const [component, value] of Object.entries(componentPatch ?? {})) {
     if (value === null) delete components[component];
     else components[component] = structuredClone(value);
   }
+
   return { id: getForm(config, form).item, components };
 }
 
-/** Returns configured modifier lore, or `null` when no lore is defined. */
-export function modifierLore(modifier: JsonObject): JsonObject[] | null {
-  return Array.isArray(modifier.lore) && modifier.lore.length ? modifier.lore : null;
-}
-
-/** Applies one global modifier's lore and output components. */
+/** Applies one global modifier's component patch. */
 export function modifierOutputStack(
   config: GeneratorConfig,
   state: PotionState,
@@ -127,7 +122,7 @@ export function modifierOutputStack(
   showParticles: boolean,
   modifier: JsonObject,
 ): JsonObject {
-  return outputStack(config, state, form, showParticles, modifierLore(modifier), modifier.output_components ?? null);
+  return outputStack(config, state, form, showParticles, modifier.components ?? null);
 }
 
 /** Creates one data-driven Minecraft brewing recipe. */

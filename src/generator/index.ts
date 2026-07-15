@@ -1,11 +1,11 @@
 #!/usr/bin/env bun
 
 import { reagentCatalog } from './config.ts';
-import { generateRecipes } from './generate.ts';
+import { componentPreservingTippedArrowPath, generateRecipes } from './generate.ts';
 import { customStates, vanillaStates } from './potions.ts';
 import { IngredientTagRegistry } from './tags.ts';
 import type { GeneratorConfig } from './types.ts';
-import { joinPath, readJson,  removeGeneratedDirectory,  resolveFromConfig, writeJson } from './utils.ts';
+import { joinPath, readJson, removeFile, removeGeneratedDirectory, resolveFromConfig, writeJson } from './utils.ts';
 import { buildVanillaRecipes } from './vanilla.ts';
 import { removeGeneratedVanillaRecipes, validateGenerated } from './validate.ts';
 
@@ -18,6 +18,7 @@ async function main(): Promise<void> {
    configPath = configArgument ? Bun.resolveSync(configArgument, '.') : joinPath(import.meta.dir, 'config.json'),
    config = await readJson<GeneratorConfig>(configPath),
    includeVanilla = config.generator.include_vanilla_recipes ?? true,
+   preserveImbuedComponents = config.generator.preserve_imbued_components ?? true,
    output = config.generator.output ?? {},
 
    dataRoot = resolveFromConfig(configPath, output.root ?? './data'),
@@ -39,6 +40,7 @@ async function main(): Promise<void> {
   await removeGeneratedDirectory(customRecipeRoot);
   await removeGeneratedDirectory(joinPath(customNamespaceRoot, 'tags', 'item', tags.root));
   await removeGeneratedVanillaRecipes(vanillaNamespaceRoot, vanillaRecipes);
+  await removeFile(componentPreservingTippedArrowPath(vanillaNamespaceRoot));
 
   const custom = customStates(config),
    vanilla = vanillaStates(config),
@@ -51,6 +53,7 @@ async function main(): Promise<void> {
     vanillaNamespaceRoot,
     vanillaRecipes,
     includeVanilla,
+    preserveImbuedComponents,
     tags,
     config.namespaces.vanilla,
   ),
@@ -67,6 +70,7 @@ async function main(): Promise<void> {
   const manifest = {
     namespaces: config.namespaces,
     include_vanilla_recipes: includeVanilla,
+    preserve_imbued_components: preserveImbuedComponents,
     output: { root: dataRoot, customNamespaceRoot, vanillaNamespaceRoot },
     counts,
     recipe_total: recipeTotal,
