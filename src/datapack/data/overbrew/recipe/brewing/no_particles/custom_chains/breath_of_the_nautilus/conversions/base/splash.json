@@ -7,8 +7,9 @@
         "contains": [
           {
             "minecraft:breath_of_the_nautilus": {
-              "amplifier": 0,
               "duration": 3600,
+              "amplifier": 0,
+              "ambient": false,
               "visible": false
             }
           }
@@ -35,7 +36,9 @@
             "id": "minecraft:breath_of_the_nautilus",
             "amplifier": 0,
             "duration": 3600,
-            "show_particles": false
+            "ambient": false,
+            "show_particles": false,
+            "show_icon": true
           }
         ]
       },

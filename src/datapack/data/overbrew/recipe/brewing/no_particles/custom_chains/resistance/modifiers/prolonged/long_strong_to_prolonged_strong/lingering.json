@@ -1,0 +1,55 @@
+{
+  "type": "minecraft:brewing",
+  "input": {
+    "item": "minecraft:lingering_potion",
+    "potion_contents": {
+      "effects": {
+        "contains": [
+          {
+            "minecraft:resistance": {
+              "duration": 4800,
+              "amplifier": 1,
+              "ambient": false,
+              "visible": false
+            }
+          }
+        ],
+        "size": 1
+      }
+    }
+  },
+  "reagent": {
+    "item": "#overbrew:brewing/modifier/prolonged"
+  },
+  "output": {
+    "id": "minecraft:lingering_potion",
+    "components": {
+      "minecraft:custom_name": {
+        "translate": "item.minecraft.lingering_potion.effect.resistance",
+        "fallback": "Lingering Potion of Resistance",
+        "italic": false
+      },
+      "minecraft:potion_contents": {
+        "custom_color": 9520880,
+        "custom_effects": [
+          {
+            "id": "minecraft:resistance",
+            "amplifier": 1,
+            "duration": 7800,
+            "ambient": false,
+            "show_particles": false,
+            "show_icon": true
+          }
+        ]
+      },
+      "minecraft:lore": [
+        {
+          "translate": "overbrew.lore.no_particles",
+          "fallback": "No Particles",
+          "italic": false,
+          "color": "#FC7812"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:brewing",
+  "input": {
+    "item": "minecraft:potion",
+    "potion_contents": {
+      "potions": "minecraft:long_invisibility"
+    }
+  },
+  "reagent": {
+    "item": "#overbrew:brewing/modifier/prolonged"
+  },
+  "output": {
+    "id": "minecraft:potion",
+    "components": {
+      "minecraft:custom_name": {
+        "translate": "item.minecraft.potion.effect.invisibility",
+        "fallback": "Potion of Invisibility",
+        "italic": false
+      },
+      "minecraft:potion_contents": {
+        "custom_color": 16185078,
+        "custom_effects": [
+          {
+            "id": "minecraft:invisibility",
+            "amplifier": 0,
+            "duration": 15600,
+            "ambient": false,
+            "show_particles": true,
+            "show_icon": true
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,204 @@
+{
+  "display": {
+    "title": {
+      "text": "Decay"
+    },
+    "description": {
+      "text": "Brew any Potion of Decay."
+    },
+    "icon": {
+      "id": "minecraft:wither_skeleton_skull"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "custom_decay_base_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:wither": {
+                  "duration": 800,
+                  "amplifier": 1,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_decay_long_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:wither": {
+                  "duration": 1800,
+                  "amplifier": 1,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_decay_long_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:wither": {
+                  "duration": 450,
+                  "amplifier": 3,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_decay_long_strong_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:wither": {
+                  "duration": 900,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_decay_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:wither": {
+                  "duration": 200,
+                  "amplifier": 3,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_decay_prolonged_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:wither": {
+                  "duration": 2800,
+                  "amplifier": 1,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_decay_prolonged_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:wither": {
+                  "duration": 700,
+                  "amplifier": 3,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_decay_prolonged_strong_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:wither": {
+                  "duration": 1400,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_decay_strong_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:wither": {
+                  "duration": 400,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "custom_decay_base_any_particles",
+      "custom_decay_long_any_particles",
+      "custom_decay_long_potent_any_particles",
+      "custom_decay_long_strong_any_particles",
+      "custom_decay_potent_any_particles",
+      "custom_decay_prolonged_any_particles",
+      "custom_decay_prolonged_potent_any_particles",
+      "custom_decay_prolonged_strong_any_particles",
+      "custom_decay_strong_any_particles"
+    ]
+  ],
+  "parent": "overbrew:overbrew/root"
+}

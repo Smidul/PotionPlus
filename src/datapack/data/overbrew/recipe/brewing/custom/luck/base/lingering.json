@@ -24,7 +24,9 @@
             "id": "minecraft:luck",
             "amplifier": 0,
             "duration": 6000,
-            "show_particles": true
+            "ambient": false,
+            "show_particles": true,
+            "show_icon": true
           }
         ]
       }

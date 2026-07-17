@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:blaze_powder",
+    "minecraft:potent_sulfur"
+  ],
+  "result": {
+    "id": "minecraft:blaze_powder",
+    "count": 1,
+    "components": {
+      "minecraft:custom_name": {
+        "text": "Potent Blaze Powder",
+        "color": "gold",
+        "italic": false
+      },
+      "minecraft:lore": [
+        {
+          "text": "10 brews at 2x speed",
+          "color": "gray",
+          "italic": false
+        }
+      ],
+      "minecraft:custom_data": {
+        "overbrew": {
+          "brewing_fuel": "potent"
+        }
+      },
+      "minecraft:brewing_fuel": {
+        "uses": "overbrew:brewing/fuel/potent/uses",
+        "speed_multiplier": "overbrew:brewing/fuel/potent/speed"
+      }
+    }
+  }
+}

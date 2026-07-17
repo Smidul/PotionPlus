@@ -7,8 +7,9 @@
         "contains": [
           {
             "minecraft:hero_of_the_village": {
-              "amplifier": 0,
               "duration": 9600,
+              "amplifier": 0,
+              "ambient": false,
               "visible": true
             }
           }
@@ -35,7 +36,9 @@
             "id": "minecraft:hero_of_the_village",
             "amplifier": 0,
             "duration": 9600,
-            "show_particles": false
+            "ambient": false,
+            "show_particles": false,
+            "show_icon": true
           }
         ]
       },

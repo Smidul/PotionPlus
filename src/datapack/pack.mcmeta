@@ -2,11 +2,20 @@
   "pack": {
     "description": [
       {
-        "text": "Adds missing potions and a resin clump modifier that removes particles.",
+        "text": "Expands brewing with missing potions, new duration and strength tiers, particle-free variants, and custom fuels.",
         "color": "gold"
       }
     ],
     "min_format": 110,
-    "max_format": 110
+    "max_format": 111
+  },
+  "overlays": {
+    "entries": [
+      {
+        "directory": "overlay_111",
+        "min_format": 111,
+        "max_format": 111
+      }
+    ]
   }
 }

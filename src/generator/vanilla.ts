@@ -1,6 +1,8 @@
 import { brewEntries, containerModifiers, getModifier, vanillaConvertiblePotions, variantModifiers } from './config.ts';
 import type { GeneratorConfig, ItemTagContext, JsonObject, LoadedRecipe, ReagentReference } from './types.ts';
+import { potionTypePredicate } from './potions.ts';
 import { baseName, basePotionKey, namespaced, resourcePath } from './utils.ts';
+import { modifierVariantEdges, registeredVariantPotions } from './variants.ts';
 
 function vanillaRecipe(
   config: GeneratorConfig,
@@ -10,12 +12,12 @@ function vanillaRecipe(
   outputItem: string,
   outputPotion: string,
 ): JsonObject {
-  const namespace = config.namespaces.vanilla;
+  const namespace = config.generator.namespaces.vanilla;
   return {
     type: `${namespace}:brewing`,
     input: {
       item: namespaced(inputItem, namespace),
-      potion_contents: { potions: namespaced(inputPotion, namespace) },
+      potion_contents: potionTypePredicate(config, inputPotion),
     },
     output: {
       components: {
@@ -41,8 +43,8 @@ function pushRecipe(
   category: string,
 ): void {
   const file = `${resourcePath(formInput)}_${inputPotion}_${resourcePath(fallbackItem)}.json`,
-   inputForm = vanillaFormName(namespaced(formInput, config.namespaces.vanilla), config),
-   outputForm = vanillaFormName(namespaced(formOutput, config.namespaces.vanilla), config),
+   inputForm = vanillaFormName(namespaced(formInput, config.generator.namespaces.vanilla), config),
+   outputForm = vanillaFormName(namespaced(formOutput, config.generator.namespaces.vanilla), config),
    context: ItemTagContext = {
     source: 'vanilla',
     input: inputPotion,
@@ -101,24 +103,24 @@ function pushBrewMap(
 }
 
 function configuredVariantRecipes(recipes: LoadedRecipe[], config: GeneratorConfig): void {
-  const potions = config.vanilla.potions,
-   baseIds = new Set(Object.keys(potions).map(basePotionKey));
-
-  for (const baseId of baseIds) {
+  for (const family of Object.keys(config.vanilla.potions)) {
+    const registered = registeredVariantPotions(config, family),
+     variants = Object.keys(registered);
     for (const { config: modifier, id: modifierId } of variantModifiers(config)) {
-      const transform = modifier.variant_transform!,
-       source = transform.from === 'base' ? baseId : `${transform.from}_${baseId}`,
-       output = transform.to === 'base' ? baseId : `${transform.to}_${baseId}`;
-      if (!potions[source] || !potions[output]) continue;
+      for (const transform of modifierVariantEdges(config, modifier, variants)) {
+        const source = registered[transform.from],
+         output = registered[transform.to];
+        if (!source || !output) continue;
 
-      pushSameFormRecipes(
-        recipes,
-        config,
-        source,
-        output,
-        { category: 'modifier', id: modifierId, config: modifier.reagent },
-        'modifier',
-      );
+        pushSameFormRecipes(
+          recipes,
+          config,
+          resourcePath(source),
+          resourcePath(output),
+          { category: 'modifier', id: modifierId, config: modifier.reagent },
+          'modifier',
+        );
+      }
     }
   }
 }
@@ -134,8 +136,11 @@ export function buildVanillaRecipes(config: GeneratorConfig): LoadedRecipe[] {
   for (const [baseId, base] of Object.entries(config.bases))
     pushBrewMap(recipes, config, baseId, 'base', base.brew);
 
-  for (const [potionId, potion] of Object.entries(config.vanilla.potions))
-    pushBrewMap(recipes, config, potionId, 'effect', potion.brew);
+  for (const [family, potion] of Object.entries(config.vanilla.potions)) {
+    const base = registeredVariantPotions(config, family).base;
+    if (!base) throw new Error(`vanilla.potions.${family}.variants.states.base must be a registered potion type`);
+    pushBrewMap(recipes, config, resourcePath(base), 'effect', potion.brew);
+  }
 
 
   configuredVariantRecipes(recipes, config);
@@ -181,7 +186,7 @@ export function buildVanillaRecipes(config: GeneratorConfig): LoadedRecipe[] {
 /** Extracts one concrete potion ID from a vanilla potion-content predicate. */
 export function extractPotionId(predicate: JsonObject | undefined, namespace = 'minecraft'): string | null {
   if (!predicate) return null;
-  const potion = predicate.potions ?? predicate.potion,
+  const potion = predicate.potions,
    value =
     typeof potion === 'string'
       ? potion

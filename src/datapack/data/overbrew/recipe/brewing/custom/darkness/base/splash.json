@@ -24,7 +24,9 @@
             "id": "minecraft:darkness",
             "amplifier": 0,
             "duration": 1800,
-            "show_particles": true
+            "ambient": false,
+            "show_particles": true,
+            "show_icon": true
           }
         ]
       }

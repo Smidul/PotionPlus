@@ -24,7 +24,9 @@
             "id": "minecraft:saturation",
             "amplifier": 0,
             "duration": 160,
-            "show_particles": true
+            "ambient": false,
+            "show_particles": true,
+            "show_icon": true
           }
         ]
       }

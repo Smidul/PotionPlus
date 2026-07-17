@@ -59,7 +59,7 @@ export function resolveFromConfig(configPath: string, configuredPath: string): s
   return prefix ? joinPath(configuredPath) : joinPath(parentPath(configPath), configuredPath);
 }
 
-/** Reads a JSON file **/
+/** Reads and parses a JSON file. */
 export function readJson<T = JsonObject>(filePath: string): Promise<T> {
   return Bun.file(filePath).json() as Promise<T>;
 }
@@ -78,10 +78,15 @@ export async function removeFile(filePath: string): Promise<void> {
   if (await file.exists()) await file.delete();
 }
 
+/** Writes text and creates parent directories. */
+export async function writeText(filePath: string, value: string): Promise<void> {
+  await mkdir(parentPath(filePath), { recursive: true });
+  await Bun.write(filePath, value);
+}
+
 /** Writes stable, two-space-indented JSON and creates parent directories. */
 export async function writeJson(filePath: string, value: unknown): Promise<void> {
-  await mkdir(parentPath(filePath), { recursive: true });
-  await Bun.write(filePath, `${JSON.stringify(value, null, 2)}\n`);
+  await writeText(filePath, `${JSON.stringify(value, null, 2)}\n`);
 }
 
 /** Adds a default namespace when an item or tag omits one. */

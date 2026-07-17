@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:weighted_list",
+  "distribution": [
+    {
+      "data": {
+        "type": "minecraft:constant",
+        "value": 4
+      },
+      "weight": 3
+    },
+    {
+      "data": {
+        "type": "minecraft:constant",
+        "value": 10
+      },
+      "weight": 5
+    },
+    {
+      "data": {
+        "type": "minecraft:constant",
+        "value": 24
+      },
+      "weight": 2
+    }
+  ]
+}

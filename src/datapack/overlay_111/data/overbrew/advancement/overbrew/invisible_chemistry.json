@@ -1,0 +1,713 @@
+{
+  "display": {
+    "title": {
+      "text": "Invisible Chemistry"
+    },
+    "description": {
+      "text": "Remove the particles from a potion."
+    },
+    "icon": {
+      "id": "minecraft:resin_clump"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "custom_absorption_base_no_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:absorption": {
+                  "visible": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_bad_luck_base_no_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:unluck": {
+                  "visible": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_blindness_base_no_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:blindness": {
+                  "visible": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_breath_of_the_nautilus_base_no_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:breath_of_the_nautilus": {
+                  "visible": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_conduit_power_base_no_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:conduit_power": {
+                  "visible": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_darkness_base_no_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:darkness": {
+                  "visible": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_decay_base_no_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:wither": {
+                  "visible": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_dolphins_grace_base_no_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:dolphins_grace": {
+                  "visible": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_glowing_base_no_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:glowing": {
+                  "visible": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_haste_base_no_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:haste": {
+                  "visible": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_health_boost_base_no_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:health_boost": {
+                  "visible": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_hero_of_the_village_base_no_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:hero_of_the_village": {
+                  "visible": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_hunger_base_no_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:hunger": {
+                  "visible": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_levitation_base_no_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:levitation": {
+                  "visible": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_luck_base_no_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:luck": {
+                  "visible": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_mining_fatigue_base_no_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:mining_fatigue": {
+                  "visible": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_nausea_base_no_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:nausea": {
+                  "visible": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_resistance_base_no_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:resistance": {
+                  "visible": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_saturation_base_no_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:saturation": {
+                  "visible": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "vanilla_fire_resistance_base_no_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:fire_resistance": {
+                  "visible": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "vanilla_harming_base_no_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:instant_damage": {
+                  "visible": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "vanilla_healing_base_no_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:instant_health": {
+                  "visible": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "vanilla_infested_base_no_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:infested": {
+                  "visible": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "vanilla_invisibility_base_no_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:invisibility": {
+                  "visible": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "vanilla_leaping_base_no_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:jump_boost": {
+                  "visible": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "vanilla_night_vision_base_no_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:night_vision": {
+                  "visible": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "vanilla_oozing_base_no_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:oozing": {
+                  "visible": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "vanilla_poison_base_no_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:poison": {
+                  "visible": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "vanilla_regeneration_base_no_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:regeneration": {
+                  "visible": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "vanilla_slow_falling_base_no_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:slow_falling": {
+                  "visible": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "vanilla_slowness_base_no_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:slowness": {
+                  "visible": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "vanilla_strength_base_no_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:strength": {
+                  "visible": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "vanilla_swiftness_base_no_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:speed": {
+                  "visible": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "vanilla_turtle_master_base_no_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:slowness": {
+                  "visible": false
+                }
+              },
+              {
+                "minecraft:resistance": {
+                  "visible": false
+                }
+              }
+            ],
+            "size": 2
+          }
+        }
+      }
+    },
+    "vanilla_water_breathing_base_no_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:water_breathing": {
+                  "visible": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "vanilla_weakness_base_no_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:weakness": {
+                  "visible": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "vanilla_weaving_base_no_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:weaving": {
+                  "visible": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "vanilla_wind_charged_base_no_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:wind_charged": {
+                  "visible": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "custom_absorption_base_no_particles",
+      "custom_bad_luck_base_no_particles",
+      "custom_blindness_base_no_particles",
+      "custom_breath_of_the_nautilus_base_no_particles",
+      "custom_conduit_power_base_no_particles",
+      "custom_darkness_base_no_particles",
+      "custom_decay_base_no_particles",
+      "custom_dolphins_grace_base_no_particles",
+      "custom_glowing_base_no_particles",
+      "custom_haste_base_no_particles",
+      "custom_health_boost_base_no_particles",
+      "custom_hero_of_the_village_base_no_particles",
+      "custom_hunger_base_no_particles",
+      "custom_levitation_base_no_particles",
+      "custom_luck_base_no_particles",
+      "custom_mining_fatigue_base_no_particles",
+      "custom_nausea_base_no_particles",
+      "custom_resistance_base_no_particles",
+      "custom_saturation_base_no_particles",
+      "vanilla_fire_resistance_base_no_particles",
+      "vanilla_harming_base_no_particles",
+      "vanilla_healing_base_no_particles",
+      "vanilla_infested_base_no_particles",
+      "vanilla_invisibility_base_no_particles",
+      "vanilla_leaping_base_no_particles",
+      "vanilla_night_vision_base_no_particles",
+      "vanilla_oozing_base_no_particles",
+      "vanilla_poison_base_no_particles",
+      "vanilla_regeneration_base_no_particles",
+      "vanilla_slow_falling_base_no_particles",
+      "vanilla_slowness_base_no_particles",
+      "vanilla_strength_base_no_particles",
+      "vanilla_swiftness_base_no_particles",
+      "vanilla_turtle_master_base_no_particles",
+      "vanilla_water_breathing_base_no_particles",
+      "vanilla_weakness_base_no_particles",
+      "vanilla_weaving_base_no_particles",
+      "vanilla_wind_charged_base_no_particles"
+    ]
+  ],
+  "parent": "overbrew:overbrew/root"
+}

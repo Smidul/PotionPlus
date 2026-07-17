@@ -1,0 +1,55 @@
+{
+  "type": "minecraft:brewing",
+  "input": {
+    "item": "minecraft:lingering_potion",
+    "potion_contents": {
+      "effects": {
+        "contains": [
+          {
+            "minecraft:hero_of_the_village": {
+              "duration": 9600,
+              "amplifier": 0,
+              "ambient": false,
+              "visible": false
+            }
+          }
+        ],
+        "size": 1
+      }
+    }
+  },
+  "reagent": {
+    "item": "#overbrew:brewing/modifier/prolonged"
+  },
+  "output": {
+    "id": "minecraft:lingering_potion",
+    "components": {
+      "minecraft:custom_name": {
+        "translate": "item.minecraft.lingering_potion.effect.hero_of_the_village",
+        "fallback": "Lingering Potion of Hero of the Village",
+        "italic": false
+      },
+      "minecraft:potion_contents": {
+        "custom_color": 4521796,
+        "custom_effects": [
+          {
+            "id": "minecraft:hero_of_the_village",
+            "amplifier": 0,
+            "duration": 15600,
+            "ambient": false,
+            "show_particles": false,
+            "show_icon": true
+          }
+        ]
+      },
+      "minecraft:lore": [
+        {
+          "translate": "overbrew.lore.no_particles",
+          "fallback": "No Particles",
+          "italic": false,
+          "color": "#FC7812"
+        }
+      ]
+    }
+  }
+}

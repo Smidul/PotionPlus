@@ -7,8 +7,9 @@
         "contains": [
           {
             "minecraft:unluck": {
-              "amplifier": 1,
               "duration": 3000,
+              "amplifier": 1,
+              "ambient": false,
               "visible": true
             }
           }
@@ -35,7 +36,9 @@
             "id": "minecraft:unluck",
             "amplifier": 1,
             "duration": 3000,
-            "show_particles": true
+            "ambient": false,
+            "show_particles": true,
+            "show_icon": true
           }
         ]
       }

@@ -1,0 +1,47 @@
+{
+  "type": "minecraft:brewing",
+  "input": {
+    "item": "minecraft:splash_potion",
+    "potion_contents": {
+      "effects": {
+        "contains": [
+          {
+            "minecraft:poison": {
+              "duration": 207,
+              "amplifier": 2,
+              "ambient": false,
+              "visible": true
+            }
+          }
+        ],
+        "size": 1
+      }
+    }
+  },
+  "reagent": {
+    "item": "#overbrew:brewing/modifier/lingering"
+  },
+  "output": {
+    "id": "minecraft:lingering_potion",
+    "components": {
+      "minecraft:custom_name": {
+        "translate": "item.minecraft.lingering_potion.effect.poison",
+        "fallback": "Lingering Potion of Poison",
+        "italic": false
+      },
+      "minecraft:potion_contents": {
+        "custom_color": 8889187,
+        "custom_effects": [
+          {
+            "id": "minecraft:poison",
+            "amplifier": 2,
+            "duration": 207,
+            "ambient": false,
+            "show_particles": true,
+            "show_icon": true
+          }
+        ]
+      }
+    }
+  }
+}

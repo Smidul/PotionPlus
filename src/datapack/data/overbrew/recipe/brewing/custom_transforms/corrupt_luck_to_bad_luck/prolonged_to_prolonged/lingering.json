@@ -1,0 +1,47 @@
+{
+  "type": "minecraft:brewing",
+  "input": {
+    "item": "minecraft:lingering_potion",
+    "potion_contents": {
+      "effects": {
+        "contains": [
+          {
+            "minecraft:luck": {
+              "duration": 18000,
+              "amplifier": 0,
+              "ambient": false,
+              "visible": true
+            }
+          }
+        ],
+        "size": 1
+      }
+    }
+  },
+  "reagent": {
+    "item": "#overbrew:brewing/modifier/corrupting"
+  },
+  "output": {
+    "id": "minecraft:lingering_potion",
+    "components": {
+      "minecraft:custom_name": {
+        "translate": "item.minecraft.lingering_potion.effect.bad_luck",
+        "fallback": "Lingering Potion of Bad Luck",
+        "italic": false
+      },
+      "minecraft:potion_contents": {
+        "custom_color": 12624973,
+        "custom_effects": [
+          {
+            "id": "minecraft:unluck",
+            "amplifier": 0,
+            "duration": 18000,
+            "ambient": false,
+            "show_particles": true,
+            "show_icon": true
+          }
+        ]
+      }
+    }
+  }
+}

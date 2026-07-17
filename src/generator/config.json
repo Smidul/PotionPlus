@@ -1,10 +1,226 @@
 {
-  "target": {
-    "data_pack_version": 110.0
-  },
   "generator": {
+    "target": {
+      "min_format": 110,
+      "max_format": 111,
+      "overlays": [
+        {
+          "directory": "overlay_111",
+          "min_format": 111,
+          "max_format": 111
+        }
+      ],
+      "description": [
+        {
+          "text": "Expands brewing with missing potions, new duration and strength tiers, particle-free variants, and custom fuels.",
+          "color": "gold"
+        }
+      ]
+    },
+    "namespaces": {
+      "custom": "overbrew",
+      "vanilla": "minecraft"
+    },
+    "variant_generation": {
+      "axes": {
+        "duration": ["base", "long", "prolonged"],
+        "amplifier": ["base", "strong", "potent"]
+      },
+      "rounding": "nearest",
+      "profiles": {
+        "standard": {
+          "durations": 2,
+          "amplifiers": 2,
+          "mix": true,
+          "states": {
+            "base": {
+              "duration": 6,
+              "amplifier": 0
+            },
+            "long": {
+              "duration": 16,
+              "amplifier": 0
+            },
+            "strong": {
+              "duration": 3,
+              "amplifier": 1
+            }
+          },
+          "scaling": {
+            "duration": {
+              "progression": "linear"
+            }
+          }
+        },
+        "double_duration": {
+          "extends": "standard",
+          "states": {
+            "base": {
+              "duration": 2,
+              "amplifier": 0
+            },
+            "long": {
+              "duration": 4,
+              "amplifier": 0
+            },
+            "strong": {
+              "duration": 1,
+              "amplifier": 1
+            }
+          }
+        },
+        "duration_only": {
+          "extends": "standard",
+          "amplifiers": 0
+        },
+        "instant": {
+          "extends": "standard",
+          "durations": 0,
+          "mix": false,
+          "states": {
+            "base": {
+              "duration": 1,
+              "amplifier": 0
+            },
+            "strong": {
+              "duration": 1,
+              "amplifier": 1
+            }
+          }
+        },
+        "poison": {
+          "extends": "standard",
+          "states": {
+            "base": {
+              "duration": 900,
+              "amplifier": 0
+            },
+            "long": {
+              "duration": 1800,
+              "amplifier": 0
+            },
+            "strong": {
+              "duration": 432,
+              "amplifier": 1
+            }
+          }
+        },
+        "slowness": {
+          "extends": "standard",
+          "states": {
+            "base": {
+              "duration": 1800,
+              "amplifier": 0
+            },
+            "long": {
+              "duration": 4800,
+              "amplifier": 0
+            },
+            "strong": {
+              "duration": 400,
+              "amplifier": 3
+            }
+          }
+        },
+        "turtle_master": {
+          "extends": "standard",
+          "states": {
+            "base": [
+              {
+                "duration": 400,
+                "amplifier": 3
+              },
+              {
+                "duration": 400,
+                "amplifier": 2
+              }
+            ],
+            "long": [
+              {
+                "duration": 800,
+                "amplifier": 3
+              },
+              {
+                "duration": 800,
+                "amplifier": 2
+              }
+            ],
+            "strong": [
+              {
+                "duration": 400,
+                "amplifier": 5
+              },
+              {
+                "duration": 400,
+                "amplifier": 3
+              }
+            ]
+          }
+        },
+        "withering": {
+          "extends": "standard",
+          "states": {
+            "base": {
+              "duration": 800,
+              "amplifier": 0
+            },
+            "long": {
+              "duration": 1800,
+              "amplifier": 0
+            },
+            "strong": {
+              "duration": 400,
+              "amplifier": 1
+            }
+          }
+        },
+        "saturation": {
+          "extends": "standard",
+          "states": {
+            "base": {
+              "duration": 160,
+              "amplifier": 0
+            },
+            "long": {
+              "duration": 240,
+              "amplifier": 0
+            },
+            "strong": {
+              "duration": 120,
+              "amplifier": 1
+            }
+          }
+        }
+      }
+    },
     "include_vanilla_recipes": true,
     "preserve_imbued_components": true,
+    "potion_matching": {
+      "detect_conflicts": true,
+      "check_tag_overlaps": true,
+      "default_potion_type": null,
+      "effect_fields": {
+        "duration": true,
+        "amplifier": true,
+        "ambient": true,
+        "visible": true
+      },
+      "auto_adjust_effects": {
+        "enabled": true,
+        "strategies": [
+          {
+            "type": "duration",
+            "priority": 10,
+            "effects": "all",
+            "prefer": "increase",
+            "algorithm": "balanced",
+            "order": "effect_first",
+            "max_delta": 20,
+            "max_total_delta": 20
+          }
+        ]
+      }
+    },
     "item_tags": {
       "enabled": true,
       "root": "brewing",
@@ -13,11 +229,180 @@
     },
     "output": {
       "root": "../datapack/data"
+    },
+    "tables": {
+      "enabled": true,
+      "output": "../../POTION_TABLES.md",
+      "sources": ["custom", "vanilla"],
+      "include_ingredients": true,
+      "titles": {
+        "custom": "Overbrew Potions",
+        "vanilla": "Vanilla Potions"
+      },
+      "ingredient_names": {
+        "minecraft:cod": "Raw Cod",
+        "minecraft:turtle_helmet": "Turtle Shell"
+      },
+      "underline_existing": true
+    },
+    "advancements": {
+      "enabled": true,
+      "overlay": "overlay_111",
+      "root": "overbrew",
+      "entries": {
+        "root": {
+          "parent": null,
+          "display": {
+            "title": "Overbrew          ",
+            "description": "Expands brewing with missing potions, new duration and strength tiers, particle-free variants, and custom fuels.",
+            "icon": {
+              "id": "minecraft:potion",
+              "components": {
+                "minecraft:potion_contents": {
+                  "custom_color": 5578058
+                }
+              }
+            },
+            "background": "minecraft:block/resin_block",
+            "show_toast": false,
+            "announce_to_chat": false
+          },
+          "match": [
+            {
+              "source": "custom",
+              "effect_fields": {
+                "duration": false,
+                "amplifier": false,
+                "ambient": false,
+                "visible": false
+              }
+            },
+            {
+              "source": "vanilla",
+              "registered": false,
+              "effect_fields": {
+                "visible": false
+              }
+            },
+            {
+              "source": "vanilla",
+              "registered": true,
+              "show_particles": false
+            }
+          ],
+          "requirements": "any"
+        },
+        "fuel_for_thought": {
+          "parent": "root",
+          "display": {
+            "title": "Fuel for Thought",
+            "description": "Craft any custom brewing fuel.",
+            "icon": "minecraft:blaze_powder"
+          },
+          "criteria": {
+            "potent_blaze_powder": {
+              "trigger": "minecraft:recipe_crafted",
+              "conditions": {
+                "recipes": ["overbrew:fuel/potent_blaze_powder"]
+              }
+            },
+            "volatile_blaze_powder": {
+              "trigger": "minecraft:recipe_crafted",
+              "conditions": {
+                "recipes": ["overbrew:fuel/volatile_blaze_powder"]
+              }
+            }
+          },
+          "requirements": "any"
+        },
+        "beyond_the_limit": {
+          "parent": "root",
+          "display": {
+            "title": "Beyond the Limit",
+            "description": "Brew a Prolonged potion.",
+            "icon": "minecraft:redstone_block",
+            "frame": "goal"
+          },
+          "match": {
+            "duration": "prolonged"
+          },
+          "requirements": "any"
+        },
+        "overwhelming_power": {
+          "parent": "root",
+          "display": {
+            "title": "Overwhelming Power",
+            "description": "Brew a Potent potion.",
+            "icon": "minecraft:glowstone",
+            "frame": "goal"
+          },
+          "match": {
+            "amplifier": "potent"
+          },
+          "requirements": "any"
+        },
+        "maximum_potential": {
+          "parent": "root",
+          "display": {
+            "title": "Maximum Potential",
+            "description": "Brew a Prolonged Potent potion.",
+            "icon": "minecraft:nether_star",
+            "frame": "challenge"
+          },
+          "match": {
+            "duration": "prolonged",
+            "amplifier": "potent"
+          },
+          "requirements": "any"
+        },
+        "decay": {
+          "parent": "root",
+          "display": {
+            "title": "Decay",
+            "description": "Brew any Potion of Decay.",
+            "icon": "minecraft:wither_skeleton_skull",
+            "frame": "goal"
+          },
+          "match": {
+            "source": "custom",
+            "family": "decay"
+          },
+          "requirements": "any"
+        },
+        "invisible_chemistry": {
+          "parent": "root",
+          "display": {
+            "title": "Invisible Chemistry",
+            "description": "Remove the particles from a potion.",
+            "icon": "minecraft:resin_clump"
+          },
+          "match": {
+            "show_particles": false,
+            "effect_fields": {
+              "duration": false,
+              "amplifier": false,
+              "ambient": false,
+              "visible": true
+            }
+          },
+          "requirements": "any"
+        },
+        "master_alchemist": {
+          "parent": "root",
+          "display": {
+            "title": "Master Alchemist",
+            "description": "Brew the base form of every Overbrew effect.",
+            "icon": "minecraft:dragon_breath",
+            "frame": "challenge"
+          },
+          "match": {
+            "source": "custom",
+            "variant": "base"
+          },
+          "requirements": "all"
+        }
+      }
     }
-  },
-  "namespaces": {
-    "custom": "overbrew",
-    "vanilla": "minecraft"
   },
   "forms": {
     "regular": {
@@ -77,18 +462,40 @@
       "reagent": {
         "items": ["minecraft:redstone"]
       },
-      "variant_transform": {
-        "from": "base",
-        "to": "long"
+      "variant_axis": {
+        "axis": "duration",
+        "to": "long",
+        "from": ["base"]
+      }
+    },
+    "prolonged": {
+      "reagent": {
+        "items": ["minecraft:redstone_block"]
+      },
+      "variant_axis": {
+        "axis": "duration",
+        "to": "prolonged",
+        "from": ["long"]
       }
     },
     "strong": {
       "reagent": {
         "items": ["minecraft:glowstone_dust"]
       },
-      "variant_transform": {
-        "from": "base",
-        "to": "strong"
+      "variant_axis": {
+        "axis": "amplifier",
+        "to": "strong",
+        "from": ["base"]
+      }
+    },
+    "potent": {
+      "reagent": {
+        "items": ["minecraft:glowstone"]
+      },
+      "variant_axis": {
+        "axis": "amplifier",
+        "to": "potent",
+        "from": ["strong"]
       }
     },
     "corrupting": {
@@ -141,24 +548,19 @@
         "effect_id": "minecraft:absorption",
         "display": "Absorption",
         "translation_suffix": "absorption",
-        "variants": {
-          "base": {
-            "duration": 3600,
-            "amplifier": 0
-          },
-          "long": {
-            "duration": 9600,
-            "amplifier": 0
-          },
-          "strong": {
-            "duration": 1800,
-            "amplifier": 1
-          }
-        },
         "color": 2445989,
         "brew": {
           "awkward": {
             "items": ["minecraft:golden_apple"]
+          }
+        },
+        "variants": {
+          "profile": "standard",
+          "states": {
+            "base": {
+              "duration": 3600,
+              "amplifier": 0
+            }
           }
         }
       },
@@ -166,24 +568,19 @@
         "effect_id": "minecraft:unluck",
         "display": "Bad Luck",
         "translation_suffix": "bad_luck",
-        "variants": {
-          "base": {
-            "duration": 6000,
-            "amplifier": 0
-          },
-          "long": {
-            "duration": 12000,
-            "amplifier": 0
-          },
-          "strong": {
-            "duration": 3000,
-            "amplifier": 1
-          }
-        },
         "color": 12624973,
         "brew": {
           "awkward": {
             "items": ["minecraft:poisonous_potato"]
+          }
+        },
+        "variants": {
+          "profile": "double_duration",
+          "states": {
+            "base": {
+              "duration": 6000,
+              "amplifier": 0
+            }
           }
         }
       },
@@ -191,20 +588,19 @@
         "effect_id": "minecraft:blindness",
         "display": "Blindness",
         "translation_suffix": "blindness",
-        "variants": {
-          "base": {
-            "duration": 1800,
-            "amplifier": 0
-          },
-          "long": {
-            "duration": 4800,
-            "amplifier": 0
-          }
-        },
         "color": 2039587,
         "brew": {
           "awkward": {
             "items": ["minecraft:ink_sac"]
+          }
+        },
+        "variants": {
+          "profile": "duration_only",
+          "states": {
+            "base": {
+              "duration": 1800,
+              "amplifier": 0
+            }
           }
         }
       },
@@ -212,20 +608,19 @@
         "effect_id": "minecraft:conduit_power",
         "display": "Conduit Power",
         "translation_suffix": "conduit_power",
-        "variants": {
-          "base": {
-            "duration": 3600,
-            "amplifier": 0
-          },
-          "long": {
-            "duration": 9600,
-            "amplifier": 0
-          }
-        },
         "color": 1950417,
         "brew": {
           "awkward": {
             "items": ["minecraft:heart_of_the_sea"]
+          }
+        },
+        "variants": {
+          "profile": "duration_only",
+          "states": {
+            "base": {
+              "duration": 3600,
+              "amplifier": 0
+            }
           }
         }
       },
@@ -233,20 +628,19 @@
         "effect_id": "minecraft:breath_of_the_nautilus",
         "display": "Breath of the Nautilus",
         "translation_suffix": "breath_of_the_nautilus",
-        "variants": {
-          "base": {
-            "duration": 3600,
-            "amplifier": 0
-          },
-          "long": {
-            "duration": 9600,
-            "amplifier": 0
-          }
-        },
         "color": 65518,
         "brew": {
           "awkward": {
             "items": ["minecraft:nautilus_shell"]
+          }
+        },
+        "variants": {
+          "profile": "duration_only",
+          "states": {
+            "base": {
+              "duration": 3600,
+              "amplifier": 0
+            }
           }
         }
       },
@@ -254,20 +648,19 @@
         "effect_id": "minecraft:darkness",
         "display": "Darkness",
         "translation_suffix": "darkness",
-        "variants": {
-          "base": {
-            "duration": 1800,
-            "amplifier": 0
-          },
-          "long": {
-            "duration": 4800,
-            "amplifier": 0
-          }
-        },
         "color": 2696993,
         "brew": {
           "awkward": {
             "items": ["minecraft:echo_shard"]
+          }
+        },
+        "variants": {
+          "profile": "duration_only",
+          "states": {
+            "base": {
+              "duration": 1800,
+              "amplifier": 0
+            }
           }
         }
       },
@@ -275,24 +668,19 @@
         "effect_id": "minecraft:wither",
         "display": "Decay",
         "translation_suffix": "decay",
-        "variants": {
-          "base": {
-            "duration": 800,
-            "amplifier": 1
-          },
-          "long": {
-            "duration": 1800,
-            "amplifier": 1
-          },
-          "strong": {
-            "duration": 400,
-            "amplifier": 2
-          }
-        },
         "color": 4996665,
         "brew": {
           "awkward": {
             "items": ["minecraft:wither_skeleton_skull"]
+          }
+        },
+        "variants": {
+          "profile": "withering",
+          "states": {
+            "base": {
+              "duration": 800,
+              "amplifier": 1
+            }
           }
         }
       },
@@ -300,20 +688,19 @@
         "effect_id": "minecraft:dolphins_grace",
         "display": "Dolphin's Grace",
         "translation_suffix": "dolphins_grace",
-        "variants": {
-          "base": {
-            "duration": 3600,
-            "amplifier": 0
-          },
-          "long": {
-            "duration": 9600,
-            "amplifier": 0
-          }
-        },
         "color": 8954814,
         "brew": {
           "awkward": {
             "items": ["minecraft:cod"]
+          }
+        },
+        "variants": {
+          "profile": "duration_only",
+          "states": {
+            "base": {
+              "duration": 3600,
+              "amplifier": 0
+            }
           }
         }
       },
@@ -321,20 +708,19 @@
         "effect_id": "minecraft:glowing",
         "display": "Glowing",
         "translation_suffix": "glowing",
-        "variants": {
-          "base": {
-            "duration": 3600,
-            "amplifier": 0
-          },
-          "long": {
-            "duration": 9600,
-            "amplifier": 0
-          }
-        },
         "color": 9740385,
         "brew": {
           "awkward": {
             "items": ["minecraft:glow_ink_sac"]
+          }
+        },
+        "variants": {
+          "profile": "duration_only",
+          "states": {
+            "base": {
+              "duration": 3600,
+              "amplifier": 0
+            }
           }
         }
       },
@@ -342,24 +728,19 @@
         "effect_id": "minecraft:haste",
         "display": "Haste",
         "translation_suffix": "haste",
-        "variants": {
-          "base": {
-            "duration": 3600,
-            "amplifier": 0
-          },
-          "long": {
-            "duration": 9600,
-            "amplifier": 0
-          },
-          "strong": {
-            "duration": 1800,
-            "amplifier": 1
-          }
-        },
         "color": 14270531,
         "brew": {
           "awkward": {
             "items": ["minecraft:diamond"]
+          }
+        },
+        "variants": {
+          "profile": "standard",
+          "states": {
+            "base": {
+              "duration": 3600,
+              "amplifier": 0
+            }
           }
         }
       },
@@ -367,24 +748,19 @@
         "effect_id": "minecraft:health_boost",
         "display": "Health Boost",
         "translation_suffix": "health_boost",
-        "variants": {
-          "base": {
-            "duration": 3600,
-            "amplifier": 0
-          },
-          "long": {
-            "duration": 9600,
-            "amplifier": 0
-          },
-          "strong": {
-            "duration": 1800,
-            "amplifier": 1
-          }
-        },
         "color": 16284963,
         "brew": {
           "awkward": {
             "items": ["minecraft:gold_block"]
+          }
+        },
+        "variants": {
+          "profile": "standard",
+          "states": {
+            "base": {
+              "duration": 3600,
+              "amplifier": 0
+            }
           }
         }
       },
@@ -392,24 +768,19 @@
         "effect_id": "minecraft:hero_of_the_village",
         "display": "Hero of the Village",
         "translation_suffix": "hero_of_the_village",
-        "variants": {
-          "base": {
-            "duration": 3600,
-            "amplifier": 0
-          },
-          "long": {
-            "duration": 9600,
-            "amplifier": 0
-          },
-          "strong": {
-            "duration": 1800,
-            "amplifier": 1
-          }
-        },
         "color": 4521796,
         "brew": {
           "awkward": {
             "items": ["minecraft:emerald_block"]
+          }
+        },
+        "variants": {
+          "profile": "standard",
+          "states": {
+            "base": {
+              "duration": 3600,
+              "amplifier": 0
+            }
           }
         }
       },
@@ -417,24 +788,19 @@
         "effect_id": "minecraft:hunger",
         "display": "Hunger",
         "translation_suffix": "hunger",
-        "variants": {
-          "base": {
-            "duration": 1800,
-            "amplifier": 0
-          },
-          "long": {
-            "duration": 4800,
-            "amplifier": 0
-          },
-          "strong": {
-            "duration": 900,
-            "amplifier": 1
-          }
-        },
         "color": 5797459,
         "brew": {
           "awkward": {
             "items": ["minecraft:rotten_flesh"]
+          }
+        },
+        "variants": {
+          "profile": "standard",
+          "states": {
+            "base": {
+              "duration": 1800,
+              "amplifier": 0
+            }
           }
         }
       },
@@ -442,24 +808,19 @@
         "effect_id": "minecraft:levitation",
         "display": "Levitation",
         "translation_suffix": "levitation",
-        "variants": {
-          "base": {
-            "duration": 400,
-            "amplifier": 0
-          },
-          "long": {
-            "duration": 800,
-            "amplifier": 0
-          },
-          "strong": {
-            "duration": 200,
-            "amplifier": 1
-          }
-        },
         "color": 13565951,
         "brew": {
           "awkward": {
             "items": ["minecraft:shulker_shell"]
+          }
+        },
+        "variants": {
+          "profile": "double_duration",
+          "states": {
+            "base": {
+              "duration": 400,
+              "amplifier": 0
+            }
           }
         }
       },
@@ -467,24 +828,19 @@
         "effect_id": "minecraft:luck",
         "display": "Luck",
         "translation_suffix": "luck",
-        "variants": {
-          "base": {
-            "duration": 6000,
-            "amplifier": 0
-          },
-          "long": {
-            "duration": 12000,
-            "amplifier": 0
-          },
-          "strong": {
-            "duration": 3000,
-            "amplifier": 1
-          }
-        },
         "color": 5882118,
         "brew": {
           "awkward": {
             "items": ["minecraft:emerald"]
+          }
+        },
+        "variants": {
+          "profile": "double_duration",
+          "states": {
+            "base": {
+              "duration": 6000,
+              "amplifier": 0
+            }
           }
         }
       },
@@ -492,24 +848,19 @@
         "effect_id": "minecraft:mining_fatigue",
         "display": "Mining Fatigue",
         "translation_suffix": "mining_fatigue",
-        "variants": {
-          "base": {
-            "duration": 1800,
-            "amplifier": 0
-          },
-          "long": {
-            "duration": 4800,
-            "amplifier": 0
-          },
-          "strong": {
-            "duration": 900,
-            "amplifier": 1
-          }
-        },
         "color": 4866583,
         "brew": {
           "awkward": {
             "items": ["minecraft:wet_sponge"]
+          }
+        },
+        "variants": {
+          "profile": "standard",
+          "states": {
+            "base": {
+              "duration": 1800,
+              "amplifier": 0
+            }
           }
         }
       },
@@ -517,20 +868,19 @@
         "effect_id": "minecraft:nausea",
         "display": "Nausea",
         "translation_suffix": "nausea",
-        "variants": {
-          "base": {
-            "duration": 1800,
-            "amplifier": 0
-          },
-          "long": {
-            "duration": 4800,
-            "amplifier": 0
-          }
-        },
         "color": 5578058,
         "brew": {
           "awkward": {
             "items": ["minecraft:potent_sulfur"]
+          }
+        },
+        "variants": {
+          "profile": "duration_only",
+          "states": {
+            "base": {
+              "duration": 1800,
+              "amplifier": 0
+            }
           }
         }
       },
@@ -538,24 +888,19 @@
         "effect_id": "minecraft:resistance",
         "display": "Resistance",
         "translation_suffix": "resistance",
-        "variants": {
-          "base": {
-            "duration": 3600,
-            "amplifier": 0
-          },
-          "long": {
-            "duration": 9600,
-            "amplifier": 0
-          },
-          "strong": {
-            "duration": 1800,
-            "amplifier": 1
-          }
-        },
         "color": 9520880,
         "brew": {
           "awkward": {
             "items": ["minecraft:obsidian"]
+          }
+        },
+        "variants": {
+          "profile": "standard",
+          "states": {
+            "base": {
+              "duration": 3600,
+              "amplifier": 0
+            }
           }
         }
       },
@@ -563,24 +908,19 @@
         "effect_id": "minecraft:saturation",
         "display": "Saturation",
         "translation_suffix": "saturation",
-        "variants": {
-          "base": {
-            "duration": 160,
-            "amplifier": 0
-          },
-          "long": {
-            "duration": 240,
-            "amplifier": 0
-          },
-          "strong": {
-            "duration": 120,
-            "amplifier": 1
-          }
-        },
         "color": 16262179,
         "brew": {
           "awkward": {
             "items": ["minecraft:golden_dandelion"]
+          }
+        },
+        "variants": {
+          "profile": "saturation",
+          "states": {
+            "base": {
+              "duration": 160,
+              "amplifier": 0
+            }
           }
         }
       },
@@ -588,24 +928,19 @@
         "effect_id": "minecraft:wither",
         "display": "Withering",
         "translation_suffix": "withering",
-        "variants": {
-          "base": {
-            "duration": 800,
-            "amplifier": 0
-          },
-          "long": {
-            "duration": 1800,
-            "amplifier": 0
-          },
-          "strong": {
-            "duration": 400,
-            "amplifier": 1
-          }
-        },
         "color": 7561558,
         "brew": {
           "awkward": {
             "items": ["minecraft:wither_rose"]
+          }
+        },
+        "variants": {
+          "profile": "withering",
+          "states": {
+            "base": {
+              "duration": 800,
+              "amplifier": 0
+            }
           }
         }
       }
@@ -615,66 +950,21 @@
         "id": "corrupt_luck_to_bad_luck",
         "from_effect": "luck",
         "to_effect": "bad_luck",
-        "modifier": "corrupting"
-      },
-      {
-        "id": "corrupt_long_luck_to_long_bad_luck",
-        "from_effect": "luck",
-        "to_effect": "bad_luck",
-        "from_variant": "long",
-        "to_variant": "long",
-        "modifier": "corrupting"
-      },
-      {
-        "id": "corrupt_strong_luck_to_strong_bad_luck",
-        "from_effect": "luck",
-        "to_effect": "bad_luck",
-        "from_variant": "strong",
-        "to_variant": "strong",
+        "variants": "matching",
         "modifier": "corrupting"
       },
       {
         "id": "corrupt_haste_to_mining_fatigue",
         "from_effect": "haste",
         "to_effect": "mining_fatigue",
-        "modifier": "corrupting"
-      },
-      {
-        "id": "corrupt_long_haste_to_long_mining_fatigue",
-        "from_effect": "haste",
-        "to_effect": "mining_fatigue",
-        "from_variant": "long",
-        "to_variant": "long",
-        "modifier": "corrupting"
-      },
-      {
-        "id": "corrupt_strong_haste_to_strong_mining_fatigue",
-        "from_effect": "haste",
-        "to_effect": "mining_fatigue",
-        "from_variant": "strong",
-        "to_variant": "strong",
+        "variants": "matching",
         "modifier": "corrupting"
       },
       {
         "id": "corrupt_saturation_to_hunger",
         "from_effect": "saturation",
         "to_effect": "hunger",
-        "modifier": "corrupting"
-      },
-      {
-        "id": "corrupt_long_saturation_to_long_hunger",
-        "from_effect": "saturation",
-        "to_effect": "hunger",
-        "from_variant": "long",
-        "to_variant": "long",
-        "modifier": "corrupting"
-      },
-      {
-        "id": "corrupt_strong_saturation_to_strong_hunger",
-        "from_effect": "saturation",
-        "to_effect": "hunger",
-        "from_variant": "strong",
-        "to_variant": "strong",
+        "variants": "matching",
         "modifier": "corrupting"
       }
     ]
@@ -696,6 +986,12 @@
           "awkward": {
             "items": ["minecraft:magma_cream"]
           }
+        },
+        "variants": {
+          "profile": "duration_only",
+          "states": {
+            "base": "minecraft:fire_resistance"
+          }
         }
       },
       "harming": {
@@ -708,7 +1004,13 @@
             "amplifier": 0,
             "duration": 1
           }
-        ]
+        ],
+        "variants": {
+          "profile": "instant",
+          "states": {
+            "base": "minecraft:harming"
+          }
+        }
       },
       "healing": {
         "display": "Healing",
@@ -724,6 +1026,12 @@
         "brew": {
           "awkward": {
             "items": ["minecraft:glistering_melon_slice"]
+          }
+        },
+        "variants": {
+          "profile": "instant",
+          "states": {
+            "base": "minecraft:healing"
           }
         }
       },
@@ -742,6 +1050,13 @@
           "awkward": {
             "items": ["minecraft:stone"]
           }
+        },
+        "variants": {
+          "profile": "duration_only",
+          "states": {
+            "base": "minecraft:infested",
+            "long": {}
+          }
         }
       },
       "invisibility": {
@@ -754,7 +1069,13 @@
             "amplifier": 0,
             "duration": 3600
           }
-        ]
+        ],
+        "variants": {
+          "profile": "duration_only",
+          "states": {
+            "base": "minecraft:invisibility"
+          }
+        }
       },
       "leaping": {
         "display": "Leaping",
@@ -771,168 +1092,13 @@
           "awkward": {
             "items": ["minecraft:rabbit_foot"]
           }
+        },
+        "variants": {
+          "profile": "standard",
+          "states": {
+            "base": "minecraft:leaping"
+          }
         }
-      },
-      "long_fire_resistance": {
-        "display": "Fire Resistance",
-        "translation_suffix": "fire_resistance",
-        "color": 16750848,
-        "effects": [
-          {
-            "id": "minecraft:fire_resistance",
-            "amplifier": 0,
-            "duration": 9600
-          }
-        ]
-      },
-      "long_invisibility": {
-        "display": "Invisibility",
-        "translation_suffix": "invisibility",
-        "color": 16185078,
-        "effects": [
-          {
-            "id": "minecraft:invisibility",
-            "amplifier": 0,
-            "duration": 9600
-          }
-        ]
-      },
-      "long_leaping": {
-        "display": "Leaping",
-        "translation_suffix": "leaping",
-        "color": 16646020,
-        "effects": [
-          {
-            "id": "minecraft:jump_boost",
-            "amplifier": 0,
-            "duration": 9600
-          }
-        ]
-      },
-      "long_night_vision": {
-        "display": "Night Vision",
-        "translation_suffix": "night_vision",
-        "color": 12779366,
-        "effects": [
-          {
-            "id": "minecraft:night_vision",
-            "amplifier": 0,
-            "duration": 9600
-          }
-        ]
-      },
-      "long_poison": {
-        "display": "Poison",
-        "translation_suffix": "poison",
-        "color": 8889187,
-        "effects": [
-          {
-            "id": "minecraft:poison",
-            "amplifier": 0,
-            "duration": 1800
-          }
-        ]
-      },
-      "long_regeneration": {
-        "display": "Regeneration",
-        "translation_suffix": "regeneration",
-        "color": 13458603,
-        "effects": [
-          {
-            "id": "minecraft:regeneration",
-            "amplifier": 0,
-            "duration": 1800
-          }
-        ]
-      },
-      "long_slow_falling": {
-        "display": "Slow Falling",
-        "translation_suffix": "slow_falling",
-        "color": 15978425,
-        "effects": [
-          {
-            "id": "minecraft:slow_falling",
-            "amplifier": 0,
-            "duration": 4800
-          }
-        ]
-      },
-      "long_slowness": {
-        "display": "Slowness",
-        "translation_suffix": "slowness",
-        "color": 9154528,
-        "effects": [
-          {
-            "id": "minecraft:slowness",
-            "amplifier": 0,
-            "duration": 4800
-          }
-        ]
-      },
-      "long_strength": {
-        "display": "Strength",
-        "translation_suffix": "strength",
-        "color": 16762624,
-        "effects": [
-          {
-            "id": "minecraft:strength",
-            "amplifier": 0,
-            "duration": 9600
-          }
-        ]
-      },
-      "long_swiftness": {
-        "display": "Swiftness",
-        "translation_suffix": "swiftness",
-        "color": 3402751,
-        "effects": [
-          {
-            "id": "minecraft:speed",
-            "amplifier": 0,
-            "duration": 9600
-          }
-        ]
-      },
-      "long_turtle_master": {
-        "display": "Turtle Master",
-        "translation_suffix": "turtle_master",
-        "color": 9274086,
-        "effects": [
-          {
-            "id": "minecraft:slowness",
-            "amplifier": 3,
-            "duration": 800
-          },
-          {
-            "id": "minecraft:resistance",
-            "amplifier": 2,
-            "duration": 800
-          }
-        ]
-      },
-      "long_water_breathing": {
-        "display": "Water Breathing",
-        "translation_suffix": "water_breathing",
-        "color": 10017472,
-        "effects": [
-          {
-            "id": "minecraft:water_breathing",
-            "amplifier": 0,
-            "duration": 9600
-          }
-        ]
-      },
-      "long_weakness": {
-        "display": "Weakness",
-        "translation_suffix": "weakness",
-        "color": 4738376,
-        "effects": [
-          {
-            "id": "minecraft:weakness",
-            "amplifier": 0,
-            "duration": 4800
-          }
-        ]
       },
       "night_vision": {
         "display": "Night Vision",
@@ -948,6 +1114,12 @@
         "brew": {
           "awkward": {
             "items": ["minecraft:golden_carrot"]
+          }
+        },
+        "variants": {
+          "profile": "duration_only",
+          "states": {
+            "base": "minecraft:night_vision"
           }
         }
       },
@@ -966,6 +1138,13 @@
           "awkward": {
             "items": ["minecraft:slime_block"]
           }
+        },
+        "variants": {
+          "profile": "duration_only",
+          "states": {
+            "base": "minecraft:oozing",
+            "long": {}
+          }
         }
       },
       "poison": {
@@ -982,6 +1161,12 @@
         "brew": {
           "awkward": {
             "items": ["minecraft:spider_eye"]
+          }
+        },
+        "variants": {
+          "profile": "poison",
+          "states": {
+            "base": "minecraft:poison"
           }
         }
       },
@@ -1000,6 +1185,12 @@
           "awkward": {
             "items": ["minecraft:ghast_tear"]
           }
+        },
+        "variants": {
+          "profile": "double_duration",
+          "states": {
+            "base": "minecraft:regeneration"
+          }
         }
       },
       "slow_falling": {
@@ -1017,6 +1208,12 @@
           "awkward": {
             "items": ["minecraft:phantom_membrane"]
           }
+        },
+        "variants": {
+          "profile": "duration_only",
+          "states": {
+            "base": "minecraft:slow_falling"
+          }
         }
       },
       "slowness": {
@@ -1029,7 +1226,13 @@
             "amplifier": 0,
             "duration": 1800
           }
-        ]
+        ],
+        "variants": {
+          "profile": "slowness",
+          "states": {
+            "base": "minecraft:slowness"
+          }
+        }
       },
       "strength": {
         "display": "Strength",
@@ -1046,120 +1249,13 @@
           "awkward": {
             "items": ["minecraft:blaze_powder"]
           }
+        },
+        "variants": {
+          "profile": "standard",
+          "states": {
+            "base": "minecraft:strength"
+          }
         }
-      },
-      "strong_harming": {
-        "display": "Harming",
-        "translation_suffix": "harming",
-        "color": 11101546,
-        "effects": [
-          {
-            "id": "minecraft:instant_damage",
-            "amplifier": 1,
-            "duration": 1
-          }
-        ]
-      },
-      "strong_healing": {
-        "display": "Healing",
-        "translation_suffix": "healing",
-        "color": 16262179,
-        "effects": [
-          {
-            "id": "minecraft:instant_health",
-            "amplifier": 1,
-            "duration": 1
-          }
-        ]
-      },
-      "strong_leaping": {
-        "display": "Leaping",
-        "translation_suffix": "leaping",
-        "color": 16646020,
-        "effects": [
-          {
-            "id": "minecraft:jump_boost",
-            "amplifier": 1,
-            "duration": 1800
-          }
-        ]
-      },
-      "strong_poison": {
-        "display": "Poison",
-        "translation_suffix": "poison",
-        "color": 8889187,
-        "effects": [
-          {
-            "id": "minecraft:poison",
-            "amplifier": 1,
-            "duration": 432
-          }
-        ]
-      },
-      "strong_regeneration": {
-        "display": "Regeneration",
-        "translation_suffix": "regeneration",
-        "color": 13458603,
-        "effects": [
-          {
-            "id": "minecraft:regeneration",
-            "amplifier": 1,
-            "duration": 450
-          }
-        ]
-      },
-      "strong_slowness": {
-        "display": "Slowness",
-        "translation_suffix": "slowness",
-        "color": 9154528,
-        "effects": [
-          {
-            "id": "minecraft:slowness",
-            "amplifier": 3,
-            "duration": 400
-          }
-        ]
-      },
-      "strong_strength": {
-        "display": "Strength",
-        "translation_suffix": "strength",
-        "color": 16762624,
-        "effects": [
-          {
-            "id": "minecraft:strength",
-            "amplifier": 1,
-            "duration": 1800
-          }
-        ]
-      },
-      "strong_swiftness": {
-        "display": "Swiftness",
-        "translation_suffix": "swiftness",
-        "color": 3402751,
-        "effects": [
-          {
-            "id": "minecraft:speed",
-            "amplifier": 1,
-            "duration": 1800
-          }
-        ]
-      },
-      "strong_turtle_master": {
-        "display": "Turtle Master",
-        "translation_suffix": "turtle_master",
-        "color": 9274854,
-        "effects": [
-          {
-            "id": "minecraft:slowness",
-            "amplifier": 5,
-            "duration": 400
-          },
-          {
-            "id": "minecraft:resistance",
-            "amplifier": 3,
-            "duration": 400
-          }
-        ]
       },
       "swiftness": {
         "display": "Swiftness",
@@ -1175,6 +1271,12 @@
         "brew": {
           "awkward": {
             "items": ["minecraft:sugar"]
+          }
+        },
+        "variants": {
+          "profile": "standard",
+          "states": {
+            "base": "minecraft:swiftness"
           }
         }
       },
@@ -1198,6 +1300,16 @@
           "awkward": {
             "items": ["minecraft:turtle_helmet"]
           }
+        },
+        "variants": {
+          "profile": "turtle_master",
+          "states": {
+            "base": "minecraft:turtle_master",
+            "strong": {
+              "potion": "minecraft:strong_turtle_master",
+              "color": 9274854
+            }
+          }
         }
       },
       "water_breathing": {
@@ -1214,6 +1326,12 @@
         "brew": {
           "awkward": {
             "items": ["minecraft:pufferfish"]
+          }
+        },
+        "variants": {
+          "profile": "duration_only",
+          "states": {
+            "base": "minecraft:water_breathing"
           }
         }
       },
@@ -1235,6 +1353,13 @@
           "mundane": {
             "items": ["minecraft:fermented_spider_eye"]
           }
+        },
+        "variants": {
+          "profile": "standard",
+          "states": {
+            "base": "minecraft:weakness",
+            "strong": {}
+          }
         }
       },
       "weaving": {
@@ -1252,6 +1377,13 @@
           "awkward": {
             "items": ["minecraft:cobweb"]
           }
+        },
+        "variants": {
+          "profile": "duration_only",
+          "states": {
+            "base": "minecraft:weaving",
+            "long": {}
+          }
         }
       },
       "wind_charged": {
@@ -1268,6 +1400,13 @@
         "brew": {
           "awkward": {
             "items": ["minecraft:breeze_rod"]
+          }
+        },
+        "variants": {
+          "profile": "duration_only",
+          "states": {
+            "base": "minecraft:wind_charged",
+            "long": {}
           }
         }
       }

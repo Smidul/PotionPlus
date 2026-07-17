@@ -1,0 +1,42 @@
+{
+  "display": {
+    "title": {
+      "text": "Fuel for Thought"
+    },
+    "description": {
+      "text": "Craft any custom brewing fuel."
+    },
+    "icon": {
+      "id": "minecraft:blaze_powder"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "potent_blaze_powder": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipes": [
+          "overbrew:fuel/potent_blaze_powder"
+        ]
+      }
+    },
+    "volatile_blaze_powder": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipes": [
+          "overbrew:fuel/volatile_blaze_powder"
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "potent_blaze_powder",
+      "volatile_blaze_powder"
+    ]
+  ],
+  "parent": "overbrew:overbrew/root"
+}

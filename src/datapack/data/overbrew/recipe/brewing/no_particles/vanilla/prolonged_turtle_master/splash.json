@@ -1,0 +1,71 @@
+{
+  "type": "minecraft:brewing",
+  "input": {
+    "item": "minecraft:splash_potion",
+    "potion_contents": {
+      "effects": {
+        "contains": [
+          {
+            "minecraft:slowness": {
+              "duration": 1200,
+              "amplifier": 3,
+              "ambient": false,
+              "visible": true
+            }
+          },
+          {
+            "minecraft:resistance": {
+              "duration": 1200,
+              "amplifier": 2,
+              "ambient": false,
+              "visible": true
+            }
+          }
+        ],
+        "size": 2
+      }
+    }
+  },
+  "reagent": {
+    "item": "#overbrew:brewing/modifier/no_particles"
+  },
+  "output": {
+    "id": "minecraft:splash_potion",
+    "components": {
+      "minecraft:custom_name": {
+        "translate": "item.minecraft.splash_potion.effect.turtle_master",
+        "fallback": "Splash Potion of Turtle Master",
+        "italic": false
+      },
+      "minecraft:potion_contents": {
+        "custom_color": 9274086,
+        "custom_effects": [
+          {
+            "id": "minecraft:slowness",
+            "amplifier": 3,
+            "duration": 1200,
+            "ambient": false,
+            "show_particles": false,
+            "show_icon": true
+          },
+          {
+            "id": "minecraft:resistance",
+            "amplifier": 2,
+            "duration": 1200,
+            "ambient": false,
+            "show_particles": false,
+            "show_icon": true
+          }
+        ]
+      },
+      "minecraft:lore": [
+        {
+          "translate": "overbrew.lore.no_particles",
+          "fallback": "No Particles",
+          "italic": false,
+          "color": "#FC7812"
+        }
+      ]
+    }
+  }
+}

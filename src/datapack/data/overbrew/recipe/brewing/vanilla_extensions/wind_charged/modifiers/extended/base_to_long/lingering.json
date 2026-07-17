@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:brewing",
+  "input": {
+    "item": "minecraft:lingering_potion",
+    "potion_contents": {
+      "potions": "minecraft:wind_charged"
+    }
+  },
+  "reagent": {
+    "item": "#overbrew:brewing/modifier/extended"
+  },
+  "output": {
+    "id": "minecraft:lingering_potion",
+    "components": {
+      "minecraft:custom_name": {
+        "translate": "item.minecraft.lingering_potion.effect.wind_charged",
+        "fallback": "Lingering Potion of Wind Charged",
+        "italic": false
+      },
+      "minecraft:potion_contents": {
+        "custom_color": 12438015,
+        "custom_effects": [
+          {
+            "id": "minecraft:wind_charged",
+            "amplifier": 0,
+            "duration": 9600,
+            "ambient": false,
+            "show_particles": true,
+            "show_icon": true
+          }
+        ]
+      }
+    }
+  }
+}

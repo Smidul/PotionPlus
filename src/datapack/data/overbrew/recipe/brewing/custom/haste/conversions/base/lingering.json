@@ -7,8 +7,9 @@
         "contains": [
           {
             "minecraft:haste": {
-              "amplifier": 0,
               "duration": 3600,
+              "amplifier": 0,
+              "ambient": false,
               "visible": true
             }
           }
@@ -35,7 +36,9 @@
             "id": "minecraft:haste",
             "amplifier": 0,
             "duration": 3600,
-            "show_particles": true
+            "ambient": false,
+            "show_particles": true,
+            "show_icon": true
           }
         ]
       }

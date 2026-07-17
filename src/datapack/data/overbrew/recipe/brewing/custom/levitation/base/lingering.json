@@ -24,7 +24,9 @@
             "id": "minecraft:levitation",
             "amplifier": 0,
             "duration": 400,
-            "show_particles": true
+            "ambient": false,
+            "show_particles": true,
+            "show_icon": true
           }
         ]
       }

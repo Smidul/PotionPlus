@@ -1,0 +1,1345 @@
+{
+  "display": {
+    "title": {
+      "text": "Overwhelming Power"
+    },
+    "description": {
+      "text": "Brew a Potent potion."
+    },
+    "icon": {
+      "id": "minecraft:glowstone"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "custom_absorption_long_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:absorption": {
+                  "duration": 2400,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_absorption_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:absorption": {
+                  "duration": 900,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_absorption_prolonged_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:absorption": {
+                  "duration": 3900,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_bad_luck_long_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:unluck": {
+                  "duration": 3000,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_bad_luck_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:unluck": {
+                  "duration": 1500,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_bad_luck_prolonged_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:unluck": {
+                  "duration": 4500,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_decay_long_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:wither": {
+                  "duration": 450,
+                  "amplifier": 3,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_decay_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:wither": {
+                  "duration": 200,
+                  "amplifier": 3,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_decay_prolonged_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:wither": {
+                  "duration": 700,
+                  "amplifier": 3,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_haste_long_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:haste": {
+                  "duration": 2400,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_haste_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:haste": {
+                  "duration": 900,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_haste_prolonged_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:haste": {
+                  "duration": 3900,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_health_boost_long_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:health_boost": {
+                  "duration": 2400,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_health_boost_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:health_boost": {
+                  "duration": 900,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_health_boost_prolonged_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:health_boost": {
+                  "duration": 3900,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_hero_of_the_village_long_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:hero_of_the_village": {
+                  "duration": 2400,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_hero_of_the_village_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:hero_of_the_village": {
+                  "duration": 900,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_hero_of_the_village_prolonged_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:hero_of_the_village": {
+                  "duration": 3900,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_hunger_long_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:hunger": {
+                  "duration": 1200,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_hunger_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:hunger": {
+                  "duration": 450,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_hunger_prolonged_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:hunger": {
+                  "duration": 1950,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_levitation_long_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:levitation": {
+                  "duration": 200,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_levitation_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:levitation": {
+                  "duration": 100,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_levitation_prolonged_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:levitation": {
+                  "duration": 300,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_luck_long_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:luck": {
+                  "duration": 3000,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_luck_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:luck": {
+                  "duration": 1500,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_luck_prolonged_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:luck": {
+                  "duration": 4500,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_mining_fatigue_long_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:mining_fatigue": {
+                  "duration": 1200,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_mining_fatigue_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:mining_fatigue": {
+                  "duration": 450,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_mining_fatigue_prolonged_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:mining_fatigue": {
+                  "duration": 1950,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_resistance_long_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:resistance": {
+                  "duration": 2400,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_resistance_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:resistance": {
+                  "duration": 900,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_resistance_prolonged_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:resistance": {
+                  "duration": 3900,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_saturation_long_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:saturation": {
+                  "duration": 135,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_saturation_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:saturation": {
+                  "duration": 90,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_saturation_prolonged_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:saturation": {
+                  "duration": 180,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_withering_long_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:wither": {
+                  "duration": 450,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_withering_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:wither": {
+                  "duration": 200,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "custom_withering_prolonged_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:wither": {
+                  "duration": 700,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "vanilla_harming_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:instant_damage": {
+                  "duration": 1,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "vanilla_healing_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:instant_health": {
+                  "duration": 1,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "vanilla_leaping_long_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:jump_boost": {
+                  "duration": 2400,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "vanilla_leaping_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:jump_boost": {
+                  "duration": 900,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "vanilla_leaping_prolonged_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:jump_boost": {
+                  "duration": 3900,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "vanilla_poison_long_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:poison": {
+                  "duration": 414,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "vanilla_poison_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:poison": {
+                  "duration": 207,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "vanilla_poison_prolonged_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:poison": {
+                  "duration": 621,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "vanilla_regeneration_long_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:regeneration": {
+                  "duration": 450,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "vanilla_regeneration_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:regeneration": {
+                  "duration": 225,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "vanilla_regeneration_prolonged_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:regeneration": {
+                  "duration": 675,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "vanilla_slowness_long_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:slowness": {
+                  "duration": 237,
+                  "amplifier": 6,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "vanilla_slowness_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:slowness": {
+                  "duration": 89,
+                  "amplifier": 6,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "vanilla_slowness_prolonged_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:slowness": {
+                  "duration": 386,
+                  "amplifier": 6,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "vanilla_strength_long_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:strength": {
+                  "duration": 2400,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "vanilla_strength_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:strength": {
+                  "duration": 900,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "vanilla_strength_prolonged_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:strength": {
+                  "duration": 3900,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "vanilla_swiftness_long_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:speed": {
+                  "duration": 2400,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "vanilla_swiftness_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:speed": {
+                  "duration": 900,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "vanilla_swiftness_prolonged_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:speed": {
+                  "duration": 3900,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "vanilla_turtle_master_long_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:slowness": {
+                  "duration": 800,
+                  "amplifier": 7,
+                  "ambient": false
+                }
+              },
+              {
+                "minecraft:resistance": {
+                  "duration": 800,
+                  "amplifier": 4,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 2
+          }
+        }
+      }
+    },
+    "vanilla_turtle_master_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:slowness": {
+                  "duration": 400,
+                  "amplifier": 7,
+                  "ambient": false
+                }
+              },
+              {
+                "minecraft:resistance": {
+                  "duration": 400,
+                  "amplifier": 4,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 2
+          }
+        }
+      }
+    },
+    "vanilla_turtle_master_prolonged_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:slowness": {
+                  "duration": 1200,
+                  "amplifier": 7,
+                  "ambient": false
+                }
+              },
+              {
+                "minecraft:resistance": {
+                  "duration": 1200,
+                  "amplifier": 4,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 2
+          }
+        }
+      }
+    },
+    "vanilla_weakness_long_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:weakness": {
+                  "duration": 1200,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "vanilla_weakness_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:weakness": {
+                  "duration": 450,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    },
+    "vanilla_weakness_prolonged_potent_any_particles": {
+      "trigger": "minecraft:brewed_potion",
+      "conditions": {
+        "potion": {
+          "effects": {
+            "contains": [
+              {
+                "minecraft:weakness": {
+                  "duration": 1950,
+                  "amplifier": 2,
+                  "ambient": false
+                }
+              }
+            ],
+            "size": 1
+          }
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "custom_absorption_long_potent_any_particles",
+      "custom_absorption_potent_any_particles",
+      "custom_absorption_prolonged_potent_any_particles",
+      "custom_bad_luck_long_potent_any_particles",
+      "custom_bad_luck_potent_any_particles",
+      "custom_bad_luck_prolonged_potent_any_particles",
+      "custom_decay_long_potent_any_particles",
+      "custom_decay_potent_any_particles",
+      "custom_decay_prolonged_potent_any_particles",
+      "custom_haste_long_potent_any_particles",
+      "custom_haste_potent_any_particles",
+      "custom_haste_prolonged_potent_any_particles",
+      "custom_health_boost_long_potent_any_particles",
+      "custom_health_boost_potent_any_particles",
+      "custom_health_boost_prolonged_potent_any_particles",
+      "custom_hero_of_the_village_long_potent_any_particles",
+      "custom_hero_of_the_village_potent_any_particles",
+      "custom_hero_of_the_village_prolonged_potent_any_particles",
+      "custom_hunger_long_potent_any_particles",
+      "custom_hunger_potent_any_particles",
+      "custom_hunger_prolonged_potent_any_particles",
+      "custom_levitation_long_potent_any_particles",
+      "custom_levitation_potent_any_particles",
+      "custom_levitation_prolonged_potent_any_particles",
+      "custom_luck_long_potent_any_particles",
+      "custom_luck_potent_any_particles",
+      "custom_luck_prolonged_potent_any_particles",
+      "custom_mining_fatigue_long_potent_any_particles",
+      "custom_mining_fatigue_potent_any_particles",
+      "custom_mining_fatigue_prolonged_potent_any_particles",
+      "custom_resistance_long_potent_any_particles",
+      "custom_resistance_potent_any_particles",
+      "custom_resistance_prolonged_potent_any_particles",
+      "custom_saturation_long_potent_any_particles",
+      "custom_saturation_potent_any_particles",
+      "custom_saturation_prolonged_potent_any_particles",
+      "custom_withering_long_potent_any_particles",
+      "custom_withering_potent_any_particles",
+      "custom_withering_prolonged_potent_any_particles",
+      "vanilla_harming_potent_any_particles",
+      "vanilla_healing_potent_any_particles",
+      "vanilla_leaping_long_potent_any_particles",
+      "vanilla_leaping_potent_any_particles",
+      "vanilla_leaping_prolonged_potent_any_particles",
+      "vanilla_poison_long_potent_any_particles",
+      "vanilla_poison_potent_any_particles",
+      "vanilla_poison_prolonged_potent_any_particles",
+      "vanilla_regeneration_long_potent_any_particles",
+      "vanilla_regeneration_potent_any_particles",
+      "vanilla_regeneration_prolonged_potent_any_particles",
+      "vanilla_slowness_long_potent_any_particles",
+      "vanilla_slowness_potent_any_particles",
+      "vanilla_slowness_prolonged_potent_any_particles",
+      "vanilla_strength_long_potent_any_particles",
+      "vanilla_strength_potent_any_particles",
+      "vanilla_strength_prolonged_potent_any_particles",
+      "vanilla_swiftness_long_potent_any_particles",
+      "vanilla_swiftness_potent_any_particles",
+      "vanilla_swiftness_prolonged_potent_any_particles",
+      "vanilla_turtle_master_long_potent_any_particles",
+      "vanilla_turtle_master_potent_any_particles",
+      "vanilla_turtle_master_prolonged_potent_any_particles",
+      "vanilla_weakness_long_potent_any_particles",
+      "vanilla_weakness_potent_any_particles",
+      "vanilla_weakness_prolonged_potent_any_particles"
+    ]
+  ],
+  "parent": "overbrew:overbrew/root"
+}

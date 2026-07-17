@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:brewing",
+  "input": {
+    "item": "minecraft:lingering_potion",
+    "potion_contents": {
+      "potions": "minecraft:long_strength"
+    }
+  },
+  "reagent": {
+    "item": "#overbrew:brewing/modifier/prolonged"
+  },
+  "output": {
+    "id": "minecraft:lingering_potion",
+    "components": {
+      "minecraft:custom_name": {
+        "translate": "item.minecraft.lingering_potion.effect.strength",
+        "fallback": "Lingering Potion of Strength",
+        "italic": false
+      },
+      "minecraft:potion_contents": {
+        "custom_color": 16762624,
+        "custom_effects": [
+          {
+            "id": "minecraft:strength",
+            "amplifier": 0,
+            "duration": 15600,
+            "ambient": false,
+            "show_particles": true,
+            "show_icon": true
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:brewing",
+  "input": {
+    "item": "minecraft:lingering_potion",
+    "potion_contents": {
+      "potions": "minecraft:long_fire_resistance"
+    }
+  },
+  "reagent": {
+    "item": "#overbrew:brewing/modifier/prolonged"
+  },
+  "output": {
+    "id": "minecraft:lingering_potion",
+    "components": {
+      "minecraft:custom_name": {
+        "translate": "item.minecraft.lingering_potion.effect.fire_resistance",
+        "fallback": "Lingering Potion of Fire Resistance",
+        "italic": false
+      },
+      "minecraft:potion_contents": {
+        "custom_color": 16750848,
+        "custom_effects": [
+          {
+            "id": "minecraft:fire_resistance",
+            "amplifier": 0,
+            "duration": 15600,
+            "ambient": false,
+            "show_particles": true,
+            "show_icon": true
+          }
+        ]
+      }
+    }
+  }
+}

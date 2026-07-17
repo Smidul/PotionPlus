@@ -1,0 +1,55 @@
+{
+  "type": "minecraft:brewing",
+  "input": {
+    "item": "minecraft:splash_potion",
+    "potion_contents": {
+      "effects": {
+        "contains": [
+          {
+            "minecraft:resistance": {
+              "duration": 2400,
+              "amplifier": 2,
+              "ambient": false,
+              "visible": false
+            }
+          }
+        ],
+        "size": 1
+      }
+    }
+  },
+  "reagent": {
+    "item": "#overbrew:brewing/modifier/prolonged"
+  },
+  "output": {
+    "id": "minecraft:splash_potion",
+    "components": {
+      "minecraft:custom_name": {
+        "translate": "item.minecraft.splash_potion.effect.resistance",
+        "fallback": "Splash Potion of Resistance",
+        "italic": false
+      },
+      "minecraft:potion_contents": {
+        "custom_color": 9520880,
+        "custom_effects": [
+          {
+            "id": "minecraft:resistance",
+            "amplifier": 2,
+            "duration": 3900,
+            "ambient": false,
+            "show_particles": false,
+            "show_icon": true
+          }
+        ]
+      },
+      "minecraft:lore": [
+        {
+          "translate": "overbrew.lore.no_particles",
+          "fallback": "No Particles",
+          "italic": false,
+          "color": "#FC7812"
+        }
+      ]
+    }
+  }
+}

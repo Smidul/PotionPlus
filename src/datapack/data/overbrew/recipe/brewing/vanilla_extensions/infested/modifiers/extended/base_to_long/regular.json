@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:brewing",
+  "input": {
+    "item": "minecraft:potion",
+    "potion_contents": {
+      "potions": "minecraft:infested"
+    }
+  },
+  "reagent": {
+    "item": "#overbrew:brewing/modifier/extended"
+  },
+  "output": {
+    "id": "minecraft:potion",
+    "components": {
+      "minecraft:custom_name": {
+        "translate": "item.minecraft.potion.effect.infested",
+        "fallback": "Potion of Infestation",
+        "italic": false
+      },
+      "minecraft:potion_contents": {
+        "custom_color": 9214860,
+        "custom_effects": [
+          {
+            "id": "minecraft:infested",
+            "amplifier": 0,
+            "duration": 9600,
+            "ambient": false,
+            "show_particles": true,
+            "show_icon": true
+          }
+        ]
+      }
+    }
+  }
+}

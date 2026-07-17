@@ -1,0 +1,47 @@
+{
+  "type": "minecraft:brewing",
+  "input": {
+    "item": "minecraft:lingering_potion",
+    "potion_contents": {
+      "effects": {
+        "contains": [
+          {
+            "minecraft:mining_fatigue": {
+              "duration": 4800,
+              "amplifier": 0,
+              "ambient": false,
+              "visible": true
+            }
+          }
+        ],
+        "size": 1
+      }
+    }
+  },
+  "reagent": {
+    "item": "#overbrew:brewing/modifier/prolonged"
+  },
+  "output": {
+    "id": "minecraft:lingering_potion",
+    "components": {
+      "minecraft:custom_name": {
+        "translate": "item.minecraft.lingering_potion.effect.mining_fatigue",
+        "fallback": "Lingering Potion of Mining Fatigue",
+        "italic": false
+      },
+      "minecraft:potion_contents": {
+        "custom_color": 4866583,
+        "custom_effects": [
+          {
+            "id": "minecraft:mining_fatigue",
+            "amplifier": 0,
+            "duration": 7800,
+            "ambient": false,
+            "show_particles": true,
+            "show_icon": true
+          }
+        ]
+      }
+    }
+  }
+}

@@ -7,8 +7,9 @@
         "contains": [
           {
             "minecraft:wither": {
-              "amplifier": 1,
               "duration": 800,
+              "amplifier": 1,
+              "ambient": false,
               "visible": true
             }
           }
@@ -35,7 +36,9 @@
             "id": "minecraft:wither",
             "amplifier": 1,
             "duration": 800,
-            "show_particles": true
+            "ambient": false,
+            "show_particles": true,
+            "show_icon": true
           }
         ]
       }

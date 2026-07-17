@@ -1,0 +1,47 @@
+{
+  "type": "minecraft:brewing",
+  "input": {
+    "item": "minecraft:potion",
+    "potion_contents": {
+      "effects": {
+        "contains": [
+          {
+            "minecraft:wither": {
+              "duration": 2800,
+              "amplifier": 1,
+              "ambient": false,
+              "visible": true
+            }
+          }
+        ],
+        "size": 1
+      }
+    }
+  },
+  "reagent": {
+    "item": "#overbrew:brewing/modifier/splash"
+  },
+  "output": {
+    "id": "minecraft:splash_potion",
+    "components": {
+      "minecraft:custom_name": {
+        "translate": "item.minecraft.splash_potion.effect.decay",
+        "fallback": "Splash Potion of Decay",
+        "italic": false
+      },
+      "minecraft:potion_contents": {
+        "custom_color": 4996665,
+        "custom_effects": [
+          {
+            "id": "minecraft:wither",
+            "amplifier": 1,
+            "duration": 2800,
+            "ambient": false,
+            "show_particles": true,
+            "show_icon": true
+          }
+        ]
+      }
+    }
+  }
+}

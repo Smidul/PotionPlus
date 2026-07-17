@@ -6,7 +6,7 @@
   },
   "display": {
     "announce_to_chat": false,
-    "description": "Adds missing potions and a new resin clump modifier that removes particles.",
+    "description": "Expands brewing with missing potions, new duration and strength tiers, particle-free variants, and custom fuels.",
     "icon": {
       "id": "minecraft:potion",
       "components": {
@@ -16,7 +16,7 @@
       }
     },
     "show_toast": false,
-    "title": "Overbrew     "
+    "title": "Overbrew          "
   },
   "parent": "tweakidul:root"
 }

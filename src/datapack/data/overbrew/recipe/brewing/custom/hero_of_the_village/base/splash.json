@@ -24,7 +24,9 @@
             "id": "minecraft:hero_of_the_village",
             "amplifier": 0,
             "duration": 3600,
-            "show_particles": true
+            "ambient": false,
+            "show_particles": true,
+            "show_icon": true
           }
         ]
       }

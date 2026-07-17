@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:blaze_powder",
+    "minecraft:potent_sulfur",
+    "minecraft:gunpowder"
+  ],
+  "result": {
+    "id": "minecraft:blaze_powder",
+    "count": 1,
+    "components": {
+      "minecraft:custom_name": {
+        "text": "Volatile Blaze Powder",
+        "color": "red",
+        "italic": false
+      },
+      "minecraft:lore": [
+        {
+          "text": "4-24 brews at 0.5x-4x speed",
+          "color": "gray",
+          "italic": false
+        },
+        {
+          "text": "Uses and speed roll independently",
+          "color": "dark_gray",
+          "italic": false
+        }
+      ],
+      "minecraft:custom_data": {
+        "overbrew": {
+          "brewing_fuel": "volatile"
+        }
+      },
+      "minecraft:brewing_fuel": {
+        "uses": "overbrew:brewing/fuel/volatile/uses",
+        "speed_multiplier": "overbrew:brewing/fuel/volatile/speed"
+      }
+    }
+  }
+}

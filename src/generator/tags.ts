@@ -273,6 +273,8 @@ export class IngredientTagRegistry {
      input = value('input'),
      output = value('output'),
      effect = value('effect'),
+     inputEffect = value('input_effect'),
+     outputEffect = value('output_effect'),
      modifier = value('modifier'),
      inputForm = value('input_form'),
      outputForm = value('output_form');
@@ -285,12 +287,12 @@ export class IngredientTagRegistry {
       case 'modifier':
         return modifier ? `modifier/${modifier}` : null;
       case 'variant':
-        return input && output && input !== output && basePotionKey(input) === basePotionKey(output)
+        return context.category === 'modifier' && effect && input && output && input !== output
           ? `variant/${input}_to_${output}`
           : null;
       case 'convert':
         return context.category === 'convert' && input && output
-          ? `convert/${basePotionKey(input)}_to_${basePotionKey(output)}`
+          ? `convert/${inputEffect || basePotionKey(input)}_to_${outputEffect || basePotionKey(output)}`
           : null;
       case 'conversion':
         return inputForm && outputForm && inputForm !== outputForm ? `conversion/${inputForm}_to_${outputForm}` : null;
